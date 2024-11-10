@@ -1,5 +1,7 @@
 package view.panel;
 
+import controller.HomeDAO;
+
 public class PatientInfoPanel extends javax.swing.JPanel 
 {
     public PatientInfoPanel() 
@@ -82,10 +84,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         ObsFld = new javax.swing.JTextPane();
         StatusText = new javax.swing.JLabel();
         StatusFld = new javax.swing.JLabel();
-        LastUpdateText = new javax.swing.JLabel();
-        LastUpdateFld = new javax.swing.JLabel();
-        UpdateByText = new javax.swing.JLabel();
-        UpdateByFld = new javax.swing.JLabel();
         UpdateHistoryBtn = new javax.swing.JButton();
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
@@ -101,7 +99,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         NameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         NameFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        NameFld.setForeground(new java.awt.Color(0, 0, 0));
         NameFld.setText("VICTOR GABRIEL MARTINS SEIDEL");
         NameFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -111,7 +108,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         SocialNameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         SocialNameFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        SocialNameFld.setForeground(new java.awt.Color(0, 0, 0));
         SocialNameFld.setText("VICTOR GABRIEL MARTINS SEIDEL");
         SocialNameFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -121,7 +117,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         BirthDateText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         BirthDateFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        BirthDateFld.setForeground(new java.awt.Color(0, 0, 0));
         BirthDateFld.setText("05/12/2005");
         BirthDateFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -131,7 +126,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         jLabel7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("BRASILEIRO");
         jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -141,7 +135,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("LINHARES");
         jLabel10.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -151,7 +144,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         RaceText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         RaceFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        RaceFld.setForeground(new java.awt.Color(0, 0, 0));
         RaceFld.setText("PARDA");
         RaceFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -161,7 +153,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         SexText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         SexFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        SexFld.setForeground(new java.awt.Color(0, 0, 0));
         SexFld.setText("MASCULINO");
         SexFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -171,7 +162,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         PatientIdText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         PatientIdFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        PatientIdFld.setForeground(new java.awt.Color(0, 0, 0));
         PatientIdFld.setText("00000");
         PatientIdFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -181,7 +171,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         CpfText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         CpfFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        CpfFld.setForeground(new java.awt.Color(0, 0, 0));
         CpfFld.setText("15187131656");
         CpfFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -191,7 +180,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         MotherText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         MotherFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        MotherFld.setForeground(new java.awt.Color(0, 0, 0));
         MotherFld.setText("ANDRÉIA ALVES MARTINS");
         MotherFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -201,7 +189,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         FatherText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         FatherFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        FatherFld.setForeground(new java.awt.Color(0, 0, 0));
         FatherFld.setText("GABRIEL SEIDEL DE FREITAS");
         FatherFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -211,7 +198,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         GuardianText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         GuardianFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        GuardianFld.setForeground(new java.awt.Color(0, 0, 0));
         GuardianFld.setText("-");
         GuardianFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -221,7 +207,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         Phone1Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         Phone1Fld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        Phone1Fld.setForeground(new java.awt.Color(0, 0, 0));
         Phone1Fld.setText("31995639780");
         Phone1Fld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -231,7 +216,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         Phone2Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         Phone2Fld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        Phone2Fld.setForeground(new java.awt.Color(0, 0, 0));
         Phone2Fld.setText("-");
         Phone2Fld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -241,7 +225,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         EmailText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         EmailFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        EmailFld.setForeground(new java.awt.Color(0, 0, 0));
         EmailFld.setText("victorgabrielms88@gmail.com");
         EmailFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -251,7 +234,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         EmContactText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         EmContacttFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        EmContacttFld.setForeground(new java.awt.Color(0, 0, 0));
         EmContacttFld.setText("3199403717");
         EmContacttFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -261,7 +243,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         EmNameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         EmNameFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        EmNameFld.setForeground(new java.awt.Color(0, 0, 0));
         EmNameFld.setText("ANDRÉIA ALVES MARTINS");
         EmNameFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -271,7 +252,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         EmRelationText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         EmRelationFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        EmRelationFld.setForeground(new java.awt.Color(0, 0, 0));
         EmRelationFld.setText("MÃE");
         EmRelationFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -281,7 +261,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         AdressText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         AdressFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        AdressFld.setForeground(new java.awt.Color(0, 0, 0));
         AdressFld.setText("Rua dos Aeronautas, 215 - Belo Horizonte, MG");
         AdressFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -296,7 +275,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         BloodTypeText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         BloodTypeFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        BloodTypeFld.setForeground(new java.awt.Color(0, 0, 0));
         BloodTypeFld.setText("O+");
         BloodTypeFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -306,7 +284,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         WeightText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         WeightFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        WeightFld.setForeground(new java.awt.Color(0, 0, 0));
         WeightFld.setText("60 kg");
         WeightFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -316,7 +293,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         HeightText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         HeightFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        HeightFld.setForeground(new java.awt.Color(0, 0, 0));
         HeightFld.setText("181 cm");
         HeightFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -327,13 +303,10 @@ public class PatientInfoPanel extends javax.swing.JPanel
 
         AllergiesPanel.setBackground(new java.awt.Color(255, 255, 255));
         AllergiesPanel.setBorder(null);
-        AllergiesPanel.setForeground(new java.awt.Color(0, 0, 0));
         AllergiesPanel.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
         AllergiesFld.setEditable(false);
-        AllergiesFld.setBackground(new java.awt.Color(255, 255, 255));
         AllergiesFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        AllergiesFld.setForeground(new java.awt.Color(0, 0, 0));
         AllergiesFld.setText("-");
         AllergiesFld.setFocusable(false);
         AllergiesPanel.setViewportView(AllergiesFld);
@@ -345,13 +318,10 @@ public class PatientInfoPanel extends javax.swing.JPanel
 
         MedicationPanel.setBackground(new java.awt.Color(255, 255, 255));
         MedicationPanel.setBorder(null);
-        MedicationPanel.setForeground(new java.awt.Color(0, 0, 0));
         MedicationPanel.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
         MedicationFld.setEditable(false);
-        MedicationFld.setBackground(new java.awt.Color(255, 255, 255));
         MedicationFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        MedicationFld.setForeground(new java.awt.Color(0, 0, 0));
         MedicationFld.setText("-");
         MedicationFld.setFocusable(false);
         MedicationPanel.setViewportView(MedicationFld);
@@ -363,19 +333,15 @@ public class PatientInfoPanel extends javax.swing.JPanel
 
         DiseasesPanel.setBackground(new java.awt.Color(255, 255, 255));
         DiseasesPanel.setBorder(null);
-        DiseasesPanel.setForeground(new java.awt.Color(0, 0, 0));
         DiseasesPanel.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
         DiseasesFld.setEditable(false);
-        DiseasesFld.setBackground(new java.awt.Color(255, 255, 255));
         DiseasesFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        DiseasesFld.setForeground(new java.awt.Color(0, 0, 0));
         DiseasesFld.setText("-");
         DiseasesFld.setFocusable(false);
         DiseasesPanel.setViewportView(DiseasesFld);
 
         ForMoreInfoText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        ForMoreInfoText.setForeground(new java.awt.Color(0, 0, 0));
         ForMoreInfoText.setText("Para mais informações, acesse o prontuário do paciente.");
         ForMoreInfoText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -386,6 +352,11 @@ public class PatientInfoPanel extends javax.swing.JPanel
         GoToMedicalRecordBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         GoToMedicalRecordBtn.setBorderPainted(false);
         GoToMedicalRecordBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        GoToMedicalRecordBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GoToMedicalRecordBtnActionPerformed(evt);
+            }
+        });
 
         HealthPlanText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         HealthPlanText.setForeground(new java.awt.Color(0, 0, 102));
@@ -398,12 +369,10 @@ public class PatientInfoPanel extends javax.swing.JPanel
         CnsText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         CnsFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        CnsFld.setForeground(new java.awt.Color(0, 0, 0));
         CnsFld.setText("703608040761038");
         CnsFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         PlanNameText.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        PlanNameText.setForeground(new java.awt.Color(0, 0, 0));
         PlanNameText.setText("-");
         PlanNameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -418,7 +387,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
         PlanNumberText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         PlanNumberFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        PlanNumberFld.setForeground(new java.awt.Color(0, 0, 0));
         PlanNumberFld.setText("-");
         PlanNumberFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -434,13 +402,10 @@ public class PatientInfoPanel extends javax.swing.JPanel
 
         ObsPanel.setBackground(new java.awt.Color(255, 255, 255));
         ObsPanel.setBorder(null);
-        ObsPanel.setForeground(new java.awt.Color(0, 0, 0));
         ObsPanel.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
         ObsFld.setEditable(false);
-        ObsFld.setBackground(new java.awt.Color(255, 255, 255));
         ObsFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld.setForeground(new java.awt.Color(0, 0, 0));
         ObsFld.setText("-");
         ObsFld.setFocusable(false);
         ObsPanel.setViewportView(ObsFld);
@@ -451,29 +416,8 @@ public class PatientInfoPanel extends javax.swing.JPanel
         StatusText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         StatusFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        StatusFld.setForeground(new java.awt.Color(0, 0, 0));
         StatusFld.setText("ATIVO");
         StatusFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        LastUpdateText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        LastUpdateText.setForeground(new java.awt.Color(0, 0, 102));
-        LastUpdateText.setText("Última atualização");
-        LastUpdateText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        LastUpdateFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        LastUpdateFld.setForeground(new java.awt.Color(0, 0, 0));
-        LastUpdateFld.setText("07/11/2024 22:07:00");
-        LastUpdateFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        UpdateByText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        UpdateByText.setForeground(new java.awt.Color(0, 0, 102));
-        UpdateByText.setText("Atualizado por");
-        UpdateByText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        UpdateByFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        UpdateByFld.setForeground(new java.awt.Color(0, 0, 0));
-        UpdateByFld.setText("VICTOR GABRIEL MARTINS SEIDEL");
-        UpdateByFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         UpdateHistoryBtn.setBackground(new java.awt.Color(0, 0, 102));
         UpdateHistoryBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -591,16 +535,7 @@ public class PatientInfoPanel extends javax.swing.JPanel
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(BackgroundLayout.createSequentialGroup()
-                                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(BackgroundLayout.createSequentialGroup()
-                                        .addComponent(LastUpdateFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(UpdateByFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(BackgroundLayout.createSequentialGroup()
-                                        .addComponent(LastUpdateText, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(UpdateByText, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
+                                .addGap(636, 636, 636)
                                 .addComponent(UpdateHistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(BackgroundLayout.createSequentialGroup()
@@ -784,21 +719,10 @@ public class PatientInfoPanel extends javax.swing.JPanel
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ObsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(StatusFld, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(BackgroundLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(LastUpdateText)
-                                    .addComponent(UpdateByText))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(LastUpdateFld, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(UpdateByFld)))
-                            .addGroup(BackgroundLayout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(UpdateHistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(17, 17, 17)
+                        .addComponent(UpdateHistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(DiseasesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -814,7 +738,7 @@ public class PatientInfoPanel extends javax.swing.JPanel
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1193, Short.MAX_VALUE)
+            .addGap(0, 1205, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -822,6 +746,10 @@ public class PatientInfoPanel extends javax.swing.JPanel
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void GoToMedicalRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToMedicalRecordBtnActionPerformed
+        HomeDAO.Singleton.INSTANCE.getHome().SetScrollPanel(HomeDAO.Singleton.INSTANCE.getHome().medicalRecordPanel);
+    }//GEN-LAST:event_GoToMedicalRecordBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -861,8 +789,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
     private javax.swing.JLabel HealthPlanText;
     private javax.swing.JLabel HeightFld;
     private javax.swing.JLabel HeightText;
-    private javax.swing.JLabel LastUpdateFld;
-    private javax.swing.JLabel LastUpdateText;
     private javax.swing.JTextPane MedicationFld;
     private javax.swing.JScrollPane MedicationPanel;
     private javax.swing.JLabel MedicationText;
@@ -892,8 +818,6 @@ public class PatientInfoPanel extends javax.swing.JPanel
     private javax.swing.JLabel SocialNameText;
     private javax.swing.JLabel StatusFld;
     private javax.swing.JLabel StatusText;
-    private javax.swing.JLabel UpdateByFld;
-    private javax.swing.JLabel UpdateByText;
     private javax.swing.JButton UpdateHistoryBtn;
     private javax.swing.JLabel WeightFld;
     private javax.swing.JLabel WeightText;

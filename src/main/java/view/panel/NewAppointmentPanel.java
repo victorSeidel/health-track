@@ -90,7 +90,7 @@ public class NewAppointmentPanel extends javax.swing.JPanel
 
         ObsFld16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ObsFld16.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ObsFld16.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ObsPanel16.setViewportView(ObsFld16);
 
         jComboBox1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -142,7 +142,7 @@ public class NewAppointmentPanel extends javax.swing.JPanel
 
         ObsFld17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ObsFld17.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ObsFld17.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ObsPanel17.setViewportView(ObsFld17);
 
         ObsPanel18.setBackground(new java.awt.Color(255, 255, 255));
@@ -151,7 +151,7 @@ public class NewAppointmentPanel extends javax.swing.JPanel
 
         ObsFld18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ObsFld18.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ObsFld18.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ObsPanel18.setViewportView(ObsFld18);
 
         AllergiesText7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -164,26 +164,27 @@ public class NewAppointmentPanel extends javax.swing.JPanel
         AllergiesText8.setText("Método de pagamento");
         AllergiesText8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jFormattedTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
         jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jFormattedTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jFormattedTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jFormattedTextField1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        UpdateHistoryBtn7.setBackground(new java.awt.Color(0, 0, 102));
-        UpdateHistoryBtn7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        UpdateHistoryBtn7.setForeground(new java.awt.Color(255, 255, 255));
         UpdateHistoryBtn7.setText("Salvar");
+        UpdateHistoryBtn7.setBackground(new java.awt.Color(0, 0, 102));
         UpdateHistoryBtn7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         UpdateHistoryBtn7.setBorderPainted(false);
         UpdateHistoryBtn7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        UpdateHistoryBtn7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        UpdateHistoryBtn7.setForeground(new java.awt.Color(255, 255, 255));
 
-        UpdateHistoryBtn8.setBackground(new java.awt.Color(0, 0, 102));
-        UpdateHistoryBtn8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        UpdateHistoryBtn8.setForeground(new java.awt.Color(255, 255, 255));
         UpdateHistoryBtn8.setText("Cancelar");
+        UpdateHistoryBtn8.setBackground(new java.awt.Color(0, 0, 102));
         UpdateHistoryBtn8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         UpdateHistoryBtn8.setBorderPainted(false);
         UpdateHistoryBtn8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        UpdateHistoryBtn8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        UpdateHistoryBtn8.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ServicePanelLayout = new javax.swing.GroupLayout(ServicePanel);
         ServicePanel.setLayout(ServicePanelLayout);
@@ -285,9 +286,9 @@ public class NewAppointmentPanel extends javax.swing.JPanel
                         .addComponent(jScrollPane1))
                     .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AllergiesText7)
-                    .addComponent(AllergiesText8))
+                .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AllergiesText8)
+                    .addComponent(AllergiesText7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ServicePanelLayout.createSequentialGroup()

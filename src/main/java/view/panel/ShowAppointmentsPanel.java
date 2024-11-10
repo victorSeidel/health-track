@@ -57,7 +57,6 @@ public class ShowAppointmentsPanel extends javax.swing.JPanel
         PatientIdText2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         PatientIdFld2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        PatientIdFld2.setForeground(new java.awt.Color(0, 0, 0));
         PatientIdFld2.setText("000000");
         PatientIdFld2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -67,13 +66,11 @@ public class ShowAppointmentsPanel extends javax.swing.JPanel
         PatientNameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         PatientNameFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        PatientNameFld.setForeground(new java.awt.Color(0, 0, 0));
         PatientNameFld.setText("VICTOR GABRIEL MARTINS SEIDEL");
         PatientNameFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         AppointmentsTable.setBackground(new java.awt.Color(204, 204, 204));
         AppointmentsTable.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        AppointmentsTable.setForeground(new java.awt.Color(0, 0, 0));
         AppointmentsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"002040", "1 consulta", "07/11/2024 12:40", "Cancelada"},
@@ -101,6 +98,17 @@ public class ShowAppointmentsPanel extends javax.swing.JPanel
         AppointmentsTable.setSelectionForeground(new java.awt.Color(0, 0, 102));
         AppointmentsTable.setShowGrid(true);
         TableScrollPanel.setViewportView(AppointmentsTable);
+        if (AppointmentsTable.getColumnModel().getColumnCount() > 0) {
+            AppointmentsTable.getColumnModel().getColumn(0).setMinWidth(100);
+            AppointmentsTable.getColumnModel().getColumn(0).setPreferredWidth(100);
+            AppointmentsTable.getColumnModel().getColumn(0).setMaxWidth(100);
+            AppointmentsTable.getColumnModel().getColumn(2).setMinWidth(150);
+            AppointmentsTable.getColumnModel().getColumn(2).setPreferredWidth(150);
+            AppointmentsTable.getColumnModel().getColumn(2).setMaxWidth(150);
+            AppointmentsTable.getColumnModel().getColumn(3).setMinWidth(100);
+            AppointmentsTable.getColumnModel().getColumn(3).setPreferredWidth(100);
+            AppointmentsTable.getColumnModel().getColumn(3).setMaxWidth(100);
+        }
 
         MoreBtn.setBackground(new java.awt.Color(0, 0, 102));
         MoreBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N

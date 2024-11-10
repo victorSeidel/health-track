@@ -38,9 +38,7 @@ public class view_Login extends javax.swing.JFrame
         UserText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         UserText.setText("Usuário");
 
-        UserFld.setBackground(new java.awt.Color(204, 204, 204));
         UserFld.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        UserFld.setForeground(new java.awt.Color(0, 0, 0));
         UserFld.setToolTipText("Digite seu nome de usuário.");
         UserFld.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         UserFld.setNextFocusableComponent(PasswordFld);
@@ -62,16 +60,14 @@ public class view_Login extends javax.swing.JFrame
 
         PasswordCheck.setBackground(new java.awt.Color(0, 0, 102));
         PasswordCheck.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        PasswordCheck.setForeground(new java.awt.Color(0, 0, 0));
+        PasswordCheck.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PasswordCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordCheckActionPerformed(evt);
             }
         });
 
-        PasswordFld.setBackground(new java.awt.Color(204, 204, 204));
         PasswordFld.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        PasswordFld.setForeground(new java.awt.Color(0, 0, 0));
         PasswordFld.setToolTipText("Digite sua senha.");
         PasswordFld.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         PasswordFld.setNextFocusableComponent(LoginBtn);
@@ -82,7 +78,7 @@ public class view_Login extends javax.swing.JFrame
         });
 
         RegisterText.setFont(new java.awt.Font("Arial", 3, 16)); // NOI18N
-        RegisterText.setForeground(new java.awt.Color(0, 0, 102));
+        RegisterText.setForeground(new java.awt.Color(147, 201, 255));
         RegisterText.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         RegisterText.setText("Criar novo usuário");
         RegisterText.setToolTipText("Aperte para criar um novo usuário.");
@@ -98,11 +94,11 @@ public class view_Login extends javax.swing.JFrame
             }
         });
 
-        LoginBtn.setBackground(new java.awt.Color(0, 63, 127));
+        LoginBtn.setBackground(new java.awt.Color(147, 201, 255));
         LoginBtn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        LoginBtn.setForeground(new java.awt.Color(255, 255, 255));
         LoginBtn.setText("Login");
         LoginBtn.setToolTipText("Aperte para fazer login.");
+        LoginBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LoginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginBtnActionPerformed(evt);
@@ -118,17 +114,6 @@ public class view_Login extends javax.swing.JFrame
         ErrorText.setForeground(java.awt.Color.red);
         ErrorText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ErrorText.setToolTipText("");
-        ErrorText.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ErrorTextMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ErrorTextMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ErrorTextMouseExited(evt);
-            }
-        });
 
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
@@ -152,7 +137,7 @@ public class view_Login extends javax.swing.JFrame
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(50, 50, 50)
                 .addComponent(UserText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(UserFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,8 +152,8 @@ public class view_Login extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ErrorText, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addComponent(ErrorText, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         UserFld.getAccessibleContext().setAccessibleName("");
@@ -185,9 +170,9 @@ public class view_Login extends javax.swing.JFrame
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(103, 103, 103)
+                .addGap(107, 107, 107)
                 .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,18 +227,6 @@ public class view_Login extends javax.swing.JFrame
         if (PasswordCheck.isSelected()) PasswordFld.setEchoChar((char) 0);
         else PasswordFld.setEchoChar('*');
     }//GEN-LAST:event_PasswordCheckActionPerformed
-
-    private void ErrorTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ErrorTextMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ErrorTextMouseClicked
-
-    private void ErrorTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ErrorTextMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ErrorTextMouseEntered
-
-    private void ErrorTextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ErrorTextMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ErrorTextMouseExited
 
     private void UserFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserFldActionPerformed
         // TODO add your handling code here:
