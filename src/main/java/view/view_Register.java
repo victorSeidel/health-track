@@ -77,7 +77,6 @@ public class view_Register extends javax.swing.JFrame
         PasswordFld.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         PasswordFld.setToolTipText("Digite sua senha.");
         PasswordFld.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        PasswordFld.setNextFocusableComponent(RegisterBtn);
         PasswordFld.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 PasswordFldKeyPressed(evt);
@@ -98,7 +97,6 @@ public class view_Register extends javax.swing.JFrame
         UserFld1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         UserFld1.setToolTipText("Digite seu nome de usuário.");
         UserFld1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        UserFld1.setNextFocusableComponent(PasswordFld);
         UserFld1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UserFld1ActionPerformed(evt);

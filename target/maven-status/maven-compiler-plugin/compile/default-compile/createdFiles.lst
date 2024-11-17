@@ -56,6 +56,7 @@ view\panel\patient\PatientInfoPanel.class
 view\panel\patient\RegisterNewPatientPanel.class
 view\panel\patient\MedicalRecordPanel.class
 view\panel\service\FinishServicePanel.class
+view\view_Home$8.class
 view\view_Main$8.class
 view\panel\PrescriptionsPanel.class
 view\view_Main.class
@@ -72,6 +73,7 @@ view\view_Register$6.class
 view\panel\PrescriptionsPanel$3.class
 controller\SettingsDAO.class
 view\panel\appointment\ShowAppointmentsPanel$2.class
+view\view_Main$9.class
 view\panel\patient\SearchPatientPanel$3.class
 view\view_Register$11.class
 view\panel\patient\RegisterNewMedicalRecordPanel$2.class

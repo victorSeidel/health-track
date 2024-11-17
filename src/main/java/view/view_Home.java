@@ -35,6 +35,7 @@ public class view_Home extends javax.swing.JFrame
         ServiceBtn = new javax.swing.JButton();
         newAppointmentBtn = new javax.swing.JButton();
         PrescriptionBtn = new javax.swing.JButton();
+        AttachmentsBtn = new javax.swing.JButton();
         ClinicalEvolutionBtn = new javax.swing.JButton();
         ScrollPanel = new javax.swing.JScrollPane();
 
@@ -145,6 +146,19 @@ public class view_Home extends javax.swing.JFrame
             }
         });
 
+        AttachmentsBtn.setBackground(new java.awt.Color(0, 0, 102));
+        AttachmentsBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        AttachmentsBtn.setForeground(new java.awt.Color(255, 255, 255));
+        AttachmentsBtn.setText("Anexos");
+        AttachmentsBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AttachmentsBtn.setBorderPainted(false);
+        AttachmentsBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AttachmentsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AttachmentsBtnActionPerformed(evt);
+            }
+        });
+
         ClinicalEvolutionBtn.setBackground(new java.awt.Color(0, 0, 102));
         ClinicalEvolutionBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         ClinicalEvolutionBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -171,13 +185,19 @@ public class view_Home extends javax.swing.JFrame
                 .addGap(13, 13, 13))
             .addGroup(SideBarPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PrescriptionBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                    .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))
+                .addComponent(PrescriptionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(newAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(SideBarPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(AttachmentsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                 .addContainerGap())
         );
         SideBarPanelLayout.setVerticalGroup(
@@ -194,8 +214,10 @@ public class view_Home extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PrescriptionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AttachmentsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(322, Short.MAX_VALUE))
+                .addContainerGap(265, Short.MAX_VALUE))
         );
 
         ScrollPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -295,6 +317,10 @@ public class view_Home extends javax.swing.JFrame
         else SetScrollPanel(newAppointmentPanel);
     }//GEN-LAST:event_newAppointmentBtnActionPerformed
 
+    private void AttachmentsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttachmentsBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AttachmentsBtnActionPerformed
+
     public static void main(String args[]) 
     {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -329,6 +355,7 @@ public class view_Home extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AttachmentsBtn;
     private javax.swing.JPanel Background;
     private javax.swing.JButton ClinicalEvolutionBtn;
     private javax.swing.JButton MedicalRecordBtn;
