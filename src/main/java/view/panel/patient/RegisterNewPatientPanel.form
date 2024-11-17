@@ -37,128 +37,113 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace pref="47" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="PersonalInfoText" alignment="1" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="MotherText" pref="300" max="32767" attributes="0"/>
-                                      <Component id="MotherFld" max="32767" attributes="0"/>
-                                  </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="MotherText" pref="300" max="32767" attributes="0"/>
+                              <Component id="MotherFld" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="FatherFld" min="-2" pref="300" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="FatherText" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="FatherFld" min="-2" pref="300" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="GuardianText" min="-2" pref="300" max="-2" attributes="0"/>
-                                              <Component id="GuardianFld" min="-2" pref="300" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
+                                  <Component id="GuardianFld" min="-2" pref="300" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="HealthPlanText" alignment="0" pref="971" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="AdressFld" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="SexFld" min="-2" pref="300" max="-2" attributes="0"/>
-                                                  <Component id="SexText" min="-2" pref="300" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="PatientIdText" pref="300" max="32767" attributes="0"/>
-                                                  <Component id="PatientIdFld" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="CpfText" max="32767" attributes="0"/>
-                                                  <Component id="CpfFld" min="-2" pref="300" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="EmContactText" alignment="0" pref="300" max="32767" attributes="0"/>
-                                                  <Component id="NationalityText" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="Phone1Text" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="NameText" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="Phone1Fld" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="NationalityFld" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="NameFld" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="EmContactFld" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="NaturalnessFld" min="-2" pref="300" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="RaceFld" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                          <Component id="EmNameText" alignment="0" pref="300" max="32767" attributes="0"/>
-                                                          <Component id="NaturalnessText" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="Phone2Text" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="SocialNameText" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="Phone2Fld" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="SocialNameFld" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="EmNameFld" alignment="0" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="EmailFld" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="EmailText" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="BirthDateText" max="32767" attributes="0"/>
-                                                          <Component id="RaceText" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="BirthDateFld" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="EmRelationFld" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="EmRelationText" min="-2" pref="300" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <Component id="ObsText" alignment="0" min="-2" pref="331" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="CnsFld" max="32767" attributes="0"/>
-                                                  <Component id="CnsText" pref="300" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="PlanNameText" max="32767" attributes="0"/>
-                                                  <Component id="PlanNameFld" min="-2" pref="300" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="PlanNumberText" max="32767" attributes="0"/>
-                                                  <Component id="PlanNumberFld" min="-2" pref="300" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="CancelBtn" min="-2" pref="300" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="SaveBtn" min="-2" pref="300" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="ObsPanel" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="AdditionalDataText" alignment="0" pref="936" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="AdressText" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="FatherText" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="PersonalInfoText" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AdditionalDataText" alignment="0" max="32767" attributes="0"/>
+                          <Component id="HealthPlanText" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AdressFld" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="SexFld" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="SexText" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="PatientIdText" pref="300" max="32767" attributes="0"/>
+                                  <Component id="PatientIdFld" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="CpfText" max="32767" attributes="0"/>
+                                  <Component id="CpfFld" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="GuardianText" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="EmContactText" alignment="0" pref="300" max="32767" attributes="0"/>
+                                  <Component id="NationalityText" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Phone1Text" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="NameText" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Phone1Fld" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="NationalityFld" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="NameFld" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EmContactFld" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="NaturalnessFld" min="-2" pref="300" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="RaceFld" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="EmNameText" alignment="0" pref="300" max="32767" attributes="0"/>
+                                          <Component id="NaturalnessText" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="Phone2Text" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="SocialNameText" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="Phone2Fld" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="SocialNameFld" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="EmNameFld" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="EmailFld" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="EmailText" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="BirthDateText" max="32767" attributes="0"/>
+                                          <Component id="RaceText" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="BirthDateFld" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="EmRelationFld" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="EmRelationText" min="-2" pref="300" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="ObsText" alignment="0" min="-2" pref="331" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="CnsFld" max="32767" attributes="0"/>
+                                  <Component id="CnsText" pref="300" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="PlanNameText" max="32767" attributes="0"/>
+                                  <Component id="PlanNameFld" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="PlanNumberText" max="32767" attributes="0"/>
+                                  <Component id="PlanNumberFld" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="CancelBtn" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="SaveBtn" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="ObsPanel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AdressText" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -221,14 +206,14 @@
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="MotherText" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="FatherText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GuardianText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="GuardianText" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="FatherFld" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="GuardianFld" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="MotherFld" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="GuardianFld" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>

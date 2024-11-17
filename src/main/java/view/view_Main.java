@@ -3,6 +3,7 @@ package view;
 import controller.HomeDAO;
 import controller.MainDAO;
 import controller.SettingsDAO;
+import java.io.IOException;
 import javax.swing.JPanel;
 import view.panel.ClinicalEvolutionPanel;
 import view.panel.patient.MedicalRecordPanel;
@@ -72,7 +73,7 @@ public class view_Main extends javax.swing.JFrame
                 .addComponent(SideBarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SoftwareNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 864, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 887, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -228,9 +229,9 @@ public class view_Main extends javax.swing.JFrame
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addComponent(SideBarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
-                .addComponent(ScrollPanel)
+                .addComponent(ScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1034, Short.MAX_VALUE)
                 .addGap(13, 13, 13))
-            .addComponent(NavBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1287, Short.MAX_VALUE)
+            .addComponent(NavBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1310, Short.MAX_VALUE)
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,7 +270,9 @@ public class view_Main extends javax.swing.JFrame
     }//GEN-LAST:event_SearchMedicalRecordBtnActionPerformed
 
     private void ServiceListBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceListBtnActionPerformed
-        
+        view_Home viewHome = new view_Home();
+        viewHome.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ServiceListBtnActionPerformed
 
     private void ShowScheduleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowScheduleBtnActionPerformed

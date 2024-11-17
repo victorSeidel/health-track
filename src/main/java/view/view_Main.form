@@ -51,10 +51,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="SideBarPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                  <Component id="ScrollPanel" max="32767" attributes="0"/>
+                  <Component id="ScrollPanel" pref="1034" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               </Group>
-              <Component id="NavBarPanel" alignment="0" pref="1287" max="32767" attributes="0"/>
+              <Component id="NavBarPanel" alignment="0" pref="1310" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -63,7 +63,7 @@
                   <Component id="NavBarPanel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="SideBarPanel" pref="670" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Component id="ScrollPanel" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
@@ -92,7 +92,7 @@
                       <Component id="SideBarBtn" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="SoftwareNameText" min="-2" pref="311" max="-2" attributes="0"/>
-                      <EmptySpace pref="864" max="32767" attributes="0"/>
+                      <EmptySpace pref="887" max="32767" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>

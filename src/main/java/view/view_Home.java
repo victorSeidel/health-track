@@ -10,6 +10,7 @@ import view.panel.patient.PatientInfoPanel;
 import view.panel.PrescriptionsPanel;
 import view.panel.service.ServicePanel;
 import view.panel.appointment.ShowAppointmentsPanel;
+import view.panel.attachment.AttachmentsPanel;
 
 public class view_Home extends javax.swing.JFrame 
 {
@@ -62,7 +63,7 @@ public class view_Home extends javax.swing.JFrame
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SoftwareNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 887, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -177,28 +178,28 @@ public class view_Home extends javax.swing.JFrame
         SideBarPanelLayout.setHorizontalGroup(
             SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SideBarPanelLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PatientInfoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(MedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(ServiceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
-                .addGap(13, 13, 13))
+                    .addComponent(PatientInfoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                    .addComponent(MedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                    .addComponent(ServiceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
             .addGroup(SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PrescriptionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(PrescriptionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(newAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(newAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
             .addGroup(SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(AttachmentsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(AttachmentsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         SideBarPanelLayout.setVerticalGroup(
             SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,9 +230,9 @@ public class view_Home extends javax.swing.JFrame
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addComponent(SideBarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(ScrollPanel)
-                .addGap(13, 13, 13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(ScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1034, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE))
             .addComponent(NavBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1310, Short.MAX_VALUE)
         );
         BackgroundLayout.setVerticalGroup(
@@ -241,9 +242,9 @@ public class view_Home extends javax.swing.JFrame
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SideBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
                     .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addGap(13, 13, 13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ScrollPanel)
-                        .addGap(13, 13, 13))))
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -318,7 +319,12 @@ public class view_Home extends javax.swing.JFrame
     }//GEN-LAST:event_newAppointmentBtnActionPerformed
 
     private void AttachmentsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttachmentsBtnActionPerformed
-        // TODO add your handling code here:
+        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
+        {
+            AttachmentsPanel newAttachmentsPanel = new AttachmentsPanel();
+            SetScrollPanel(newAttachmentsPanel);
+        }
+        else SetScrollPanel(attachmentsPanel);
     }//GEN-LAST:event_AttachmentsBtnActionPerformed
 
     public static void main(String args[]) 
@@ -377,6 +383,7 @@ public class view_Home extends javax.swing.JFrame
     public ShowAppointmentsPanel showAppointmentsPanel   = new ShowAppointmentsPanel();
     public ServicePanel servicePanel                     = new ServicePanel();
     public PrescriptionsPanel prescriptionsPanel         = new PrescriptionsPanel();
+    public AttachmentsPanel attachmentsPanel             = new AttachmentsPanel();
     public ClinicalEvolutionPanel clinicalEvolutionPanel = new ClinicalEvolutionPanel();
 
     public void SetScrollPanel(JPanel newPanel)

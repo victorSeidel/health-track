@@ -1,6 +1,7 @@
 view\panel\appointment\NewAppointmentPanel$1.class
 view\view_Login$1.class
 view\view_Register$3.class
+model\ProdutosDTO.class
 view\view_Register.class
 view\view_Register$13.class
 view\panel\service\ServicePanel$1.class
@@ -18,6 +19,7 @@ view\panel\service\ServicePanel$4.class
 view\view_Main$3.class
 controller\MainDAO.class
 view\panel\patient\RegisterNewPatientPanel$4.class
+view\panel\attachment\AttachmentsPanel$2.class
 view\view_Home$5.class
 view\panel\PrescriptionsPanel$1.class
 view\view_Main$4.class
@@ -35,10 +37,12 @@ view\view_Home$1.class
 view\panel\appointment\NewAppointmentPanel.class
 view\panel\ClinicalEvolutionPanel$1.class
 view\view_Login$4.class
+view\panel\attachment\AttachmentsPanel$1.class
 view\panel\PrescriptionsPanel$4.class
 view\view_Home.class
 controller\SettingsDAO$Singleton.class
 view\view_Main$7.class
+model\AttachmentDTO.class
 view\view_Register$8.class
 view\view_Home$4.class
 view\panel\patient\MedicalRecordPanel$1.class
@@ -57,7 +61,9 @@ view\panel\patient\RegisterNewPatientPanel.class
 view\panel\patient\MedicalRecordPanel.class
 view\panel\service\FinishServicePanel.class
 view\view_Home$8.class
+view\panel\attachment\AttachmentsPanel.class
 view\view_Main$8.class
+controller\ConnectDAO.class
 view\panel\PrescriptionsPanel.class
 view\view_Main.class
 view\panel\service\ServicePanel.class
@@ -66,14 +72,17 @@ controller\HomeDAO.class
 view\panel\patient\MedicalRecordPanel$2.class
 view\panel\service\ServicePanel$2.class
 view\view_Register$9.class
+view\panel\attachment\AttachmentsPanel$3.class
 view\panel\patient\PatientInfoPanel$1.class
 view\view_Login.class
+model\ProdutosDAO.class
 view\view_Home$3.class
 view\view_Register$6.class
 view\panel\PrescriptionsPanel$3.class
 controller\SettingsDAO.class
 view\panel\appointment\ShowAppointmentsPanel$2.class
 view\view_Main$9.class
+model\AttachmentDAO.class
 view\panel\patient\SearchPatientPanel$3.class
 view\view_Register$11.class
 view\panel\patient\RegisterNewMedicalRecordPanel$2.class
