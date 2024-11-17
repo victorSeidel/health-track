@@ -1,4 +1,4 @@
-package model;
+package controller;
 
 import controller.ConnectDAO;
 import java.sql.PreparedStatement;
@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import model.AttachmentDTO;
 
 public class AttachmentDAO 
 {

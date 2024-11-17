@@ -86,7 +86,6 @@ public class view_Register extends javax.swing.JFrame
         ErrorText.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         ErrorText.setForeground(java.awt.Color.red);
         ErrorText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ErrorText.setText("a");
         ErrorText.setToolTipText("");
 
         UserText1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -289,9 +288,7 @@ public class view_Register extends javax.swing.JFrame
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

@@ -28,8 +28,9 @@ public class view_Home extends javax.swing.JFrame
         Background = new javax.swing.JPanel();
         NavBarPanel = new javax.swing.JPanel();
         SoftwareNameText = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        SideBarBtn = new javax.swing.JButton();
+        ConfigBtn = new javax.swing.JButton();
+        ExitBtn = new javax.swing.JButton();
         SideBarPanel = new javax.swing.JPanel();
         PatientInfoBtn = new javax.swing.JButton();
         MedicalRecordBtn = new javax.swing.JButton();
@@ -54,28 +55,49 @@ public class view_Home extends javax.swing.JFrame
         SoftwareNameText.setText("Health Track");
         SoftwareNameText.setPreferredSize(new java.awt.Dimension(300, 22));
 
+        SideBarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SideBarBtnActionPerformed(evt);
+            }
+        });
+
+        ConfigBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfigBtnActionPerformed(evt);
+            }
+        });
+
+        ExitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout NavBarPanelLayout = new javax.swing.GroupLayout(NavBarPanel);
         NavBarPanel.setLayout(NavBarPanelLayout);
         NavBarPanelLayout.setHorizontalGroup(
             NavBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NavBarPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SideBarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SoftwareNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ConfigBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ExitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         NavBarPanelLayout.setVerticalGroup(
             NavBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NavBarPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(NavBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SoftwareNameText, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(5, 5, 5)
+                .addGroup(NavBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ConfigBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SoftwareNameText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(ExitBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SideBarBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(5, 5, 5))
         );
 
         SideBarPanel.setBackground(new java.awt.Color(204, 204, 204));
@@ -178,28 +200,15 @@ public class view_Home extends javax.swing.JFrame
         SideBarPanelLayout.setHorizontalGroup(
             SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PatientInfoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(MedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(ServiceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
-            .addGroup(SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(PrescriptionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(newAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-            .addGroup(SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(AttachmentsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                    .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AttachmentsBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PrescriptionBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(newAppointmentBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                    .addComponent(PatientInfoBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ServiceBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         SideBarPanelLayout.setVerticalGroup(
             SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,10 +250,10 @@ public class view_Home extends javax.swing.JFrame
                 .addComponent(NavBarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SideBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
                         .addComponent(ScrollPanel)
-                        .addContainerGap())))
+                        .addGap(13, 13, 13))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -327,6 +336,20 @@ public class view_Home extends javax.swing.JFrame
         else SetScrollPanel(attachmentsPanel);
     }//GEN-LAST:event_AttachmentsBtnActionPerformed
 
+    private void SideBarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SideBarBtnActionPerformed
+        SideBarPanel.setVisible(!SideBarPanel.isVisible());
+    }//GEN-LAST:event_SideBarBtnActionPerformed
+
+    private void ExitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitBtnActionPerformed
+        view_Main viewMain = new view_Main();
+        viewMain.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ExitBtnActionPerformed
+
+    private void ConfigBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfigBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConfigBtnActionPerformed
+
     public static void main(String args[]) 
     {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -364,16 +387,17 @@ public class view_Home extends javax.swing.JFrame
     private javax.swing.JButton AttachmentsBtn;
     private javax.swing.JPanel Background;
     private javax.swing.JButton ClinicalEvolutionBtn;
+    private javax.swing.JButton ConfigBtn;
+    private javax.swing.JButton ExitBtn;
     private javax.swing.JButton MedicalRecordBtn;
     private javax.swing.JPanel NavBarPanel;
     private javax.swing.JButton PatientInfoBtn;
     private javax.swing.JButton PrescriptionBtn;
     private javax.swing.JScrollPane ScrollPanel;
     private javax.swing.JButton ServiceBtn;
+    private javax.swing.JButton SideBarBtn;
     private javax.swing.JPanel SideBarPanel;
     private javax.swing.JLabel SoftwareNameText;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton newAppointmentBtn;
     // End of variables declaration//GEN-END:variables
     

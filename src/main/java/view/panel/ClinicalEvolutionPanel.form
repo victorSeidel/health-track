@@ -37,33 +37,24 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="TableScrollPanel" min="-2" pref="918" max="-2" attributes="0"/>
+                      <Component id="TableScrollPanel" alignment="1" pref="918" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="SocialNameText2" pref="250" max="32767" attributes="0"/>
-                                      <Component id="SocialNameFld2" max="32767" attributes="0"/>
-                                      <Component id="SocialNameText3" alignment="0" pref="250" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="BirthDateText2" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="BirthDateFld2" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="SocialNameText3" min="-2" pref="250" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jTextField1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="UpdateHistoryBtn6" pref="300" max="32767" attributes="0"/>
                               <Component id="SocialNameText4" max="32767" attributes="0"/>
-                              <Component id="jComboBox1" max="32767" attributes="0"/>
+                              <Component id="jComboBox1" pref="300" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <Component id="Title" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="47" max="32767" attributes="0"/>
               </Group>
@@ -73,31 +64,21 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="Title" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="UpdateHistoryBtn6" min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SocialNameText2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BirthDateText2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="SocialNameText4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SocialNameFld2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BirthDateFld2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jComboBox1" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="SocialNameText3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jTextField1" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="SocialNameText3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="SocialNameText4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="jComboBox1" alignment="3" pref="50" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
                   <Component id="TableScrollPanel" min="-2" pref="922" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               </Group>
@@ -105,71 +86,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="UpdateHistoryBtn6">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Visualizar"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
-            <Property name="borderPainted" type="boolean" value="false"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="SocialNameText2">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="14" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="C&#xf3;digo do paciente"/>
-            <Property name="verticalAlignment" type="int" value="1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="SocialNameFld2">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="002170"/>
-            <Property name="verticalAlignment" type="int" value="1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="BirthDateText2">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="14" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Nome do paciente"/>
-            <Property name="verticalAlignment" type="int" value="1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="BirthDateFld2">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="VICTOR GABRIEL MARTINS SEIDEL"/>
-            <Property name="verticalAlignment" type="int" value="1"/>
-          </Properties>
-        </Component>
         <Container class="javax.swing.JScrollPane" name="TableScrollPanel">
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
@@ -309,6 +225,19 @@
               <Color blue="66" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Tipo de filtro"/>
+            <Property name="verticalAlignment" type="int" value="1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Title">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="EVOLU&#xc7;&#xc3;O CL&#xcd;NICA"/>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>

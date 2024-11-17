@@ -92,8 +92,10 @@
                       <Component id="SideBarBtn" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="SoftwareNameText" min="-2" pref="311" max="-2" attributes="0"/>
-                      <EmptySpace pref="887" max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="ConfigBtn" min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="ExitBtn" min="-2" pref="41" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -102,9 +104,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="SoftwareNameText" pref="40" max="32767" attributes="0"/>
-                          <Component id="jButton1" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="ConfigBtn" max="32767" attributes="0"/>
+                          <Component id="SoftwareNameText" alignment="0" pref="40" max="32767" attributes="0"/>
+                          <Component id="ExitBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="SideBarBtn" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
@@ -127,11 +130,19 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
-            </Component>
             <Component class="javax.swing.JButton" name="SideBarBtn">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SideBarBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="ConfigBtn">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConfigBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="ExitBtn">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitBtnActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

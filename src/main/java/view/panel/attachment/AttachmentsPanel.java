@@ -11,8 +11,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -25,7 +23,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
-import model.AttachmentDAO;
+import controller.AttachmentDAO;
 import model.AttachmentDTO;
 import org.apache.commons.io.FilenameUtils;
 
@@ -44,14 +42,11 @@ public class AttachmentsPanel extends javax.swing.JPanel
 
         ShowAppointmentsPanel = new javax.swing.JPanel();
         AttachmentsText = new javax.swing.JLabel();
-        PatientIdText = new javax.swing.JLabel();
-        PatientIdFld = new javax.swing.JLabel();
-        NameText = new javax.swing.JLabel();
-        NameFld = new javax.swing.JLabel();
-        ShowAttachmentBtn = new javax.swing.JButton();
         TableScrollPanel = new javax.swing.JScrollPane();
         AttachmentsTable = new javax.swing.JTable();
         NewAttachmentBtn = new javax.swing.JButton();
+        DeleteAttachmentBtn = new javax.swing.JButton();
+        ShowAttachmentBtn = new javax.swing.JButton();
 
         ShowAppointmentsPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -60,37 +55,6 @@ public class AttachmentsPanel extends javax.swing.JPanel
         AttachmentsText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AttachmentsText.setText("ANEXOS");
         AttachmentsText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        PatientIdText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        PatientIdText.setForeground(new java.awt.Color(0, 0, 102));
-        PatientIdText.setText("Código do paciente");
-        PatientIdText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        PatientIdFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        PatientIdFld.setText("000000");
-        PatientIdFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        NameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        NameText.setForeground(new java.awt.Color(0, 0, 102));
-        NameText.setText("Nome do paciente");
-        NameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        NameFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        NameFld.setText("VICTOR GABRIEL MARTINS SEIDEL");
-        NameFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        ShowAttachmentBtn.setBackground(new java.awt.Color(0, 0, 102));
-        ShowAttachmentBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        ShowAttachmentBtn.setForeground(new java.awt.Color(255, 255, 255));
-        ShowAttachmentBtn.setText("Visualizar");
-        ShowAttachmentBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ShowAttachmentBtn.setBorderPainted(false);
-        ShowAttachmentBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ShowAttachmentBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowAttachmentBtnActionPerformed(evt);
-            }
-        });
 
         AttachmentsTable.setBackground(new java.awt.Color(204, 204, 204));
         AttachmentsTable.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -143,6 +107,32 @@ public class AttachmentsPanel extends javax.swing.JPanel
             }
         });
 
+        DeleteAttachmentBtn.setBackground(new java.awt.Color(204, 0, 0));
+        DeleteAttachmentBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        DeleteAttachmentBtn.setForeground(new java.awt.Color(255, 255, 255));
+        DeleteAttachmentBtn.setText("Excluir anexo");
+        DeleteAttachmentBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DeleteAttachmentBtn.setBorderPainted(false);
+        DeleteAttachmentBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DeleteAttachmentBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAttachmentBtnActionPerformed(evt);
+            }
+        });
+
+        ShowAttachmentBtn.setBackground(new java.awt.Color(0, 0, 102));
+        ShowAttachmentBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        ShowAttachmentBtn.setForeground(new java.awt.Color(255, 255, 255));
+        ShowAttachmentBtn.setText("Visualizar anexo");
+        ShowAttachmentBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ShowAttachmentBtn.setBorderPainted(false);
+        ShowAttachmentBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ShowAttachmentBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowAttachmentBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ShowAppointmentsPanelLayout = new javax.swing.GroupLayout(ShowAppointmentsPanel);
         ShowAppointmentsPanel.setLayout(ShowAppointmentsPanelLayout);
         ShowAppointmentsPanelLayout.setHorizontalGroup(
@@ -150,43 +140,29 @@ public class AttachmentsPanel extends javax.swing.JPanel
             .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
                 .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                        .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(PatientIdFld, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PatientIdText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NameText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(NameFld, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(ShowAttachmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(AttachmentsText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(NewAttachmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TableScrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE))
+                    .addComponent(TableScrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShowAppointmentsPanelLayout.createSequentialGroup()
+                        .addComponent(NewAttachmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(DeleteAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ShowAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         ShowAppointmentsPanelLayout.setVerticalGroup(
             ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(47, 47, 47)
                 .addComponent(AttachmentsText)
                 .addGap(18, 18, 18)
-                .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                            .addComponent(PatientIdText)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(PatientIdFld))
-                        .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                            .addComponent(NameText)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(NameFld)))
-                    .addComponent(ShowAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(TableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(TableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(NewAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NewAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ShowAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DeleteAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -201,7 +177,7 @@ public class AttachmentsPanel extends javax.swing.JPanel
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 652, Short.MAX_VALUE)
+            .addGap(0, 670, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(ShowAppointmentsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -239,15 +215,36 @@ public class AttachmentsPanel extends javax.swing.JPanel
         ShowFile(attachment);
     }//GEN-LAST:event_ShowAttachmentBtnActionPerformed
 
+    private void DeleteAttachmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAttachmentBtnActionPerformed
+        int selectedRow = AttachmentsTable.getSelectedRow();
+        
+        if (selectedRow == -1)
+        {
+            JOptionPane.showMessageDialog(null, "Selecione um anexo.");
+            return;
+        }
+        
+        if (JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir esse anexo?") != JOptionPane.YES_OPTION) return;
+        
+        int id = (int) AttachmentsTable.getValueAt(selectedRow, 0);
+        
+        AttachmentDAO attachmentDAO = new AttachmentDAO();
+        
+        if (!attachmentDAO.Delete(id))
+        {
+            JOptionPane.showMessageDialog(null, "Erro ao excluir anexo.");
+            return;
+        }
+        
+        UpdateTable();
+    }//GEN-LAST:event_DeleteAttachmentBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AttachmentsTable;
     private javax.swing.JLabel AttachmentsText;
-    private javax.swing.JLabel NameFld;
-    private javax.swing.JLabel NameText;
+    private javax.swing.JButton DeleteAttachmentBtn;
     private javax.swing.JButton NewAttachmentBtn;
-    private javax.swing.JLabel PatientIdFld;
-    private javax.swing.JLabel PatientIdText;
     private javax.swing.JPanel ShowAppointmentsPanel;
     private javax.swing.JButton ShowAttachmentBtn;
     private javax.swing.JScrollPane TableScrollPanel;
@@ -294,7 +291,7 @@ public class AttachmentsPanel extends javax.swing.JPanel
                     
                     if (input.equalsIgnoreCase("null") || input.length() <= 0)
                     {
-                        JOptionPane.showMessageDialog(null, "Digite um nome para o arquivo!");
+                        JOptionPane.showMessageDialog(null, "Error: Arquivo sem nome.");
                         return;
                     }
                     
@@ -314,20 +311,18 @@ public class AttachmentsPanel extends javax.swing.JPanel
 
                     if (!attachmentDAO.Insert(attachment)) 
                     {
-                        System.out.println("Erro ao inserir o arquivo!");
+                        System.out.println("Error: Não foi possível inserir o arquivo!");
                         return;
                     } 
-               
-                    JOptionPane.showMessageDialog(null, "Arquivo enviado com sucesso!");
                 } 
                 catch (IOException e) 
                 {
-                    JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } 
             else 
             {
-                JOptionPane.showMessageDialog(null, "Erro: o arquivo selecionado não existe!");
+                JOptionPane.showMessageDialog(null, "Error: O arquivo selecionado não existe!");
             }
         }
         
@@ -352,11 +347,11 @@ public class AttachmentsPanel extends javax.swing.JPanel
         } 
         catch (HeadlessException ex) 
         {
-            JOptionPane.showMessageDialog(null, "Erro ao carregar a imagem.");
+            JOptionPane.showMessageDialog(null, "Error: Não foi possível carregar a imagem.");
         }
     }
-     
-   private void SetTable()
+    
+    private void SetTable()
    {
         JTableHeader tableHeader = AttachmentsTable.getTableHeader();
         

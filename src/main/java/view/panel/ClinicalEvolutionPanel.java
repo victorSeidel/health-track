@@ -34,45 +34,15 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
     private void initComponents() {
 
         Background = new javax.swing.JPanel();
-        UpdateHistoryBtn6 = new javax.swing.JButton();
-        SocialNameText2 = new javax.swing.JLabel();
-        SocialNameFld2 = new javax.swing.JLabel();
-        BirthDateText2 = new javax.swing.JLabel();
-        BirthDateFld2 = new javax.swing.JLabel();
         TableScrollPanel = new javax.swing.JScrollPane();
         EvolutionTable = new javax.swing.JTable();
         SocialNameText3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         SocialNameText4 = new javax.swing.JLabel();
+        Title = new javax.swing.JLabel();
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
-
-        UpdateHistoryBtn6.setBackground(new java.awt.Color(0, 0, 102));
-        UpdateHistoryBtn6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        UpdateHistoryBtn6.setForeground(new java.awt.Color(255, 255, 255));
-        UpdateHistoryBtn6.setText("Visualizar");
-        UpdateHistoryBtn6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        UpdateHistoryBtn6.setBorderPainted(false);
-        UpdateHistoryBtn6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        SocialNameText2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        SocialNameText2.setForeground(new java.awt.Color(0, 0, 102));
-        SocialNameText2.setText("Código do paciente");
-        SocialNameText2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        SocialNameFld2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        SocialNameFld2.setText("002170");
-        SocialNameFld2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        BirthDateText2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        BirthDateText2.setForeground(new java.awt.Color(0, 0, 102));
-        BirthDateText2.setText("Nome do paciente");
-        BirthDateText2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        BirthDateFld2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        BirthDateFld2.setText("VICTOR GABRIEL MARTINS SEIDEL");
-        BirthDateFld2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         EvolutionTable.setBackground(new java.awt.Color(204, 204, 204));
         EvolutionTable.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -132,57 +102,49 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
         SocialNameText4.setText("Tipo de filtro");
         SocialNameText4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        Title.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Title.setForeground(new java.awt.Color(0, 0, 102));
+        Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Title.setText("EVOLUÇÃO CLÍNICA");
+        Title.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addContainerGap(44, Short.MAX_VALUE)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 918, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TableScrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(BackgroundLayout.createSequentialGroup()
-                                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(SocialNameText2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                                    .addComponent(SocialNameFld2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(SocialNameText3, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(BirthDateText2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BirthDateFld2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(SocialNameText3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jTextField1))
                         .addGap(18, 18, 18)
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(UpdateHistoryBtn6, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                             .addComponent(SocialNameText4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jComboBox1, 0, 300, Short.MAX_VALUE)))
+                    .addComponent(Title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(UpdateHistoryBtn6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SocialNameText2)
-                            .addComponent(BirthDateText2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SocialNameFld2)
-                            .addComponent(BirthDateFld2))))
+                .addComponent(Title)
                 .addGap(18, 18, 18)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SocialNameText3)
-                    .addComponent(SocialNameText4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addComponent(SocialNameText4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1))
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addComponent(SocialNameText3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(TableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 922, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
         );
@@ -202,15 +164,11 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JLabel BirthDateFld2;
-    private javax.swing.JLabel BirthDateText2;
     private javax.swing.JTable EvolutionTable;
-    private javax.swing.JLabel SocialNameFld2;
-    private javax.swing.JLabel SocialNameText2;
     private javax.swing.JLabel SocialNameText3;
     private javax.swing.JLabel SocialNameText4;
     private javax.swing.JScrollPane TableScrollPanel;
-    private javax.swing.JButton UpdateHistoryBtn6;
+    private javax.swing.JLabel Title;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
