@@ -1,14 +1,15 @@
 package view;
 
 import controller.HomeDAO;
+import controller.SettingsDAO;
 import javax.swing.JPanel;
 import view.panel.ClinicalEvolutionPanel;
-import view.panel.MedicalRecordPanel;
-import view.panel.NewAppointmentPanel;
-import view.panel.PatientInfoPanel;
+import view.panel.patient.MedicalRecordPanel;
+import view.panel.appointment.NewAppointmentPanel;
+import view.panel.patient.PatientInfoPanel;
 import view.panel.PrescriptionsPanel;
-import view.panel.ServicePanel;
-import view.panel.ShowAppointmentsPanel;
+import view.panel.service.ServicePanel;
+import view.panel.appointment.ShowAppointmentsPanel;
 
 public class view_Home extends javax.swing.JFrame 
 {
@@ -32,6 +33,7 @@ public class view_Home extends javax.swing.JFrame
         PatientInfoBtn = new javax.swing.JButton();
         MedicalRecordBtn = new javax.swing.JButton();
         ServiceBtn = new javax.swing.JButton();
+        newAppointmentBtn = new javax.swing.JButton();
         PrescriptionBtn = new javax.swing.JButton();
         ClinicalEvolutionBtn = new javax.swing.JButton();
         ScrollPanel = new javax.swing.JScrollPane();
@@ -59,7 +61,7 @@ public class view_Home extends javax.swing.JFrame
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SoftwareNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 874, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 887, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -117,6 +119,19 @@ public class view_Home extends javax.swing.JFrame
             }
         });
 
+        newAppointmentBtn.setBackground(new java.awt.Color(0, 0, 102));
+        newAppointmentBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        newAppointmentBtn.setForeground(new java.awt.Color(255, 255, 255));
+        newAppointmentBtn.setText("Agendar consulta");
+        newAppointmentBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        newAppointmentBtn.setBorderPainted(false);
+        newAppointmentBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        newAppointmentBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newAppointmentBtnActionPerformed(evt);
+            }
+        });
+
         PrescriptionBtn.setBackground(new java.awt.Color(0, 0, 102));
         PrescriptionBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         PrescriptionBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,10 +167,18 @@ public class view_Home extends javax.swing.JFrame
                 .addGroup(SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PatientInfoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                     .addComponent(MedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(ServiceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(PrescriptionBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
+                    .addComponent(ServiceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
                 .addGap(13, 13, 13))
+            .addGroup(SideBarPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PrescriptionBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                    .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(newAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addContainerGap())
         );
         SideBarPanelLayout.setVerticalGroup(
             SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,10 +190,12 @@ public class view_Home extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ServiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(newAppointmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PrescriptionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addContainerGap(322, Short.MAX_VALUE))
         );
 
         ScrollPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -185,14 +210,14 @@ public class view_Home extends javax.swing.JFrame
                 .addGap(0, 0, 0)
                 .addComponent(ScrollPanel)
                 .addGap(13, 13, 13))
-            .addComponent(NavBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1286, Short.MAX_VALUE)
+            .addComponent(NavBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1310, Short.MAX_VALUE)
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                 .addComponent(NavBarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SideBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
+                    .addComponent(SideBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addComponent(ScrollPanel)
@@ -217,24 +242,58 @@ public class view_Home extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void PatientInfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientInfoBtnActionPerformed
-        SetScrollPanel(patientInfoPanel);
+        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
+        {
+            PatientInfoPanel newPatientInfoPanel = new PatientInfoPanel();
+            SetScrollPanel(newPatientInfoPanel);
+        }
+        else SetScrollPanel(patientInfoPanel);
     }//GEN-LAST:event_PatientInfoBtnActionPerformed
 
     private void MedicalRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicalRecordBtnActionPerformed
-        SetScrollPanel(medicalRecordPanel);
+        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
+        {
+            MedicalRecordPanel newMedicalRecordPanel = new MedicalRecordPanel();
+            SetScrollPanel(newMedicalRecordPanel);
+        }
+        else SetScrollPanel(medicalRecordPanel);
     }//GEN-LAST:event_MedicalRecordBtnActionPerformed
 
     private void ServiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceBtnActionPerformed
-        SetScrollPanel(servicePanel);
+        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
+        {
+            ServicePanel newServicePanel = new ServicePanel();
+            SetScrollPanel(newServicePanel);
+        }
+        else SetScrollPanel(servicePanel);
     }//GEN-LAST:event_ServiceBtnActionPerformed
 
     private void PrescriptionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrescriptionBtnActionPerformed
-        SetScrollPanel(prescriptionsPanel);
+        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
+        {
+            PrescriptionsPanel newPrescriptionsPanel = new PrescriptionsPanel();
+            SetScrollPanel(newPrescriptionsPanel);
+        }
+        else SetScrollPanel(prescriptionsPanel);
     }//GEN-LAST:event_PrescriptionBtnActionPerformed
 
     private void ClinicalEvolutionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicalEvolutionBtnActionPerformed
-        SetScrollPanel(clinicalEvolutionPanel);
+        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
+        {
+            ClinicalEvolutionPanel newClinicalEvolutionPanel = new ClinicalEvolutionPanel();
+            SetScrollPanel(newClinicalEvolutionPanel);
+        }
+        else SetScrollPanel(clinicalEvolutionPanel);
     }//GEN-LAST:event_ClinicalEvolutionBtnActionPerformed
+
+    private void newAppointmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAppointmentBtnActionPerformed
+        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
+        {
+            NewAppointmentPanel newNewAppointmentPanel = new NewAppointmentPanel();
+            SetScrollPanel(newNewAppointmentPanel);
+        }
+        else SetScrollPanel(newAppointmentPanel);
+    }//GEN-LAST:event_newAppointmentBtnActionPerformed
 
     public static void main(String args[]) 
     {
@@ -282,6 +341,7 @@ public class view_Home extends javax.swing.JFrame
     private javax.swing.JLabel SoftwareNameText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton newAppointmentBtn;
     // End of variables declaration//GEN-END:variables
     
     public PatientInfoPanel patientInfoPanel             = new PatientInfoPanel();

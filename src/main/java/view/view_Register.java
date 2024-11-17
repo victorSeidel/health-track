@@ -87,6 +87,7 @@ public class view_Register extends javax.swing.JFrame
         ErrorText.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         ErrorText.setForeground(java.awt.Color.red);
         ErrorText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ErrorText.setText("a");
         ErrorText.setToolTipText("");
 
         UserText1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -178,7 +179,7 @@ public class view_Register extends javax.swing.JFrame
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(50, 50, 50)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ErrorText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelLayout.createSequentialGroup()
@@ -221,12 +222,12 @@ public class view_Register extends javax.swing.JFrame
                                                 .addComponent(ConPasswordCheck))
                                             .addComponent(ConPasswordFld, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(10, 10, 10)))))
-                .addContainerGap())
+                .addGap(50, 50, 50))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(50, 50, 50)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addComponent(UserText1)
@@ -259,8 +260,8 @@ public class view_Register extends javax.swing.JFrame
                     .addComponent(CancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(RegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ErrorText, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addComponent(ErrorText)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         UserFld.getAccessibleContext().setAccessibleName("");
@@ -277,9 +278,9 @@ public class view_Register extends javax.swing.JFrame
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(80, 80, 80)
                 .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

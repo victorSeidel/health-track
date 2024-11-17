@@ -54,7 +54,7 @@
                   <Component id="ScrollPanel" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               </Group>
-              <Component id="NavBarPanel" alignment="0" pref="1286" max="32767" attributes="0"/>
+              <Component id="NavBarPanel" alignment="0" pref="1310" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -62,7 +62,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <Component id="NavBarPanel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="SideBarPanel" pref="678" max="32767" attributes="0"/>
+                      <Component id="SideBarPanel" pref="670" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Component id="ScrollPanel" max="32767" attributes="0"/>
@@ -92,7 +92,7 @@
                       <Component id="jButton2" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="SoftwareNameText" min="-2" pref="318" max="-2" attributes="0"/>
-                      <EmptySpace pref="874" max="32767" attributes="0"/>
+                      <EmptySpace pref="887" max="32767" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -153,10 +153,21 @@
                           <Component id="PatientInfoBtn" pref="224" max="32767" attributes="0"/>
                           <Component id="MedicalRecordBtn" alignment="0" pref="224" max="32767" attributes="0"/>
                           <Component id="ServiceBtn" alignment="1" pref="224" max="32767" attributes="0"/>
-                          <Component id="PrescriptionBtn" alignment="1" pref="224" max="32767" attributes="0"/>
-                          <Component id="ClinicalEvolutionBtn" alignment="0" pref="224" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="PrescriptionBtn" alignment="1" pref="226" max="32767" attributes="0"/>
+                          <Component id="ClinicalEvolutionBtn" alignment="0" pref="226" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="newAppointmentBtn" pref="226" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -170,10 +181,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ServiceBtn" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="newAppointmentBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="PrescriptionBtn" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ClinicalEvolutionBtn" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace pref="387" max="32767" attributes="0"/>
+                      <EmptySpace pref="322" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -255,6 +268,32 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ServiceBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="newAppointmentBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="14" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Agendar consulta"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newAppointmentBtnActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="PrescriptionBtn">
