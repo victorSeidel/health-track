@@ -118,7 +118,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="UpdateHistoryBtn" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="PrintRecordBtn" min="-2" pref="458" max="-2" attributes="0"/>
+                          <Component id="PrintRecordBtn" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="47" max="32767" attributes="0"/>

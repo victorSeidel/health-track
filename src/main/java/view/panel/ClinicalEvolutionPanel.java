@@ -41,11 +41,13 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
         jTextField1 = new javax.swing.JTextField();
         SocialNameText4 = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
+        SocialNameText2 = new javax.swing.JLabel();
+        SocialNameFld2 = new javax.swing.JLabel();
+        BirthDateText2 = new javax.swing.JLabel();
+        BirthDateFld2 = new javax.swing.JLabel();
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
 
-        EvolutionTable.setBackground(new java.awt.Color(204, 204, 204));
-        EvolutionTable.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         EvolutionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1 consulta", "Consulta", "07/11/2024 12:40"},
@@ -67,7 +69,9 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
                 return canEdit [columnIndex];
             }
         });
+        EvolutionTable.setBackground(new java.awt.Color(204, 204, 204));
         EvolutionTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        EvolutionTable.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         EvolutionTable.setGridColor(new java.awt.Color(0, 0, 0));
         EvolutionTable.setOpaque(false);
         EvolutionTable.setRowHeight(25);
@@ -84,29 +88,47 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
             EvolutionTable.getColumnModel().getColumn(2).setMaxWidth(150);
         }
 
-        SocialNameText3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        SocialNameText3.setForeground(new java.awt.Color(0, 0, 102));
         SocialNameText3.setText("Filtro");
         SocialNameText3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        SocialNameText3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        SocialNameText3.setForeground(new java.awt.Color(0, 0, 102));
 
-        jComboBox1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Anexos", "Pedidos de exame", "Receitas", "Consultas", "Encaminhamentos", "Atestados" }));
         jComboBox1.setBorder(null);
+        jComboBox1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBox1.setLightWeightPopupEnabled(false);
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        SocialNameText4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        SocialNameText4.setForeground(new java.awt.Color(0, 0, 102));
         SocialNameText4.setText("Tipo de filtro");
         SocialNameText4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        SocialNameText4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        SocialNameText4.setForeground(new java.awt.Color(0, 0, 102));
 
-        Title.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        Title.setForeground(new java.awt.Color(0, 0, 102));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setText("EVOLUÇÃO CLÍNICA");
         Title.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Title.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Title.setForeground(new java.awt.Color(0, 0, 102));
+
+        SocialNameText2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        SocialNameText2.setForeground(new java.awt.Color(0, 0, 102));
+        SocialNameText2.setText("Código do paciente");
+        SocialNameText2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        SocialNameFld2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        SocialNameFld2.setText("002170");
+        SocialNameFld2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        BirthDateText2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BirthDateText2.setForeground(new java.awt.Color(0, 0, 102));
+        BirthDateText2.setText("Nome do paciente");
+        BirthDateText2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        BirthDateFld2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        BirthDateFld2.setText("VICTOR GABRIEL MARTINS SEIDEL");
+        BirthDateFld2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
@@ -114,19 +136,28 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addContainerGap(44, Short.MAX_VALUE)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TableScrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(BackgroundLayout.createSequentialGroup()
-                                .addComponent(SocialNameText3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField1))
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SocialNameText2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SocialNameFld2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SocialNameText4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, 300, Short.MAX_VALUE)))
-                    .addComponent(Title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(BirthDateText2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BirthDateFld2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(TableScrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
+                            .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(BackgroundLayout.createSequentialGroup()
+                                    .addComponent(SocialNameText3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jTextField1))
+                            .addGap(18, 18, 18)
+                            .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(SocialNameText4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox1, 0, 300, Short.MAX_VALUE)))
+                        .addComponent(Title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         BackgroundLayout.setVerticalGroup(
@@ -135,7 +166,15 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
                 .addGap(47, 47, 47)
                 .addComponent(Title)
                 .addGap(18, 18, 18)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SocialNameText2)
+                    .addComponent(BirthDateText2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SocialNameFld2)
+                    .addComponent(BirthDateFld2))
+                .addGap(18, 18, 18)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addComponent(SocialNameText4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -144,7 +183,7 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
                         .addComponent(SocialNameText3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(TableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 922, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
         );
@@ -164,7 +203,11 @@ public class ClinicalEvolutionPanel extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
+    private javax.swing.JLabel BirthDateFld2;
+    private javax.swing.JLabel BirthDateText2;
     private javax.swing.JTable EvolutionTable;
+    private javax.swing.JLabel SocialNameFld2;
+    private javax.swing.JLabel SocialNameText2;
     private javax.swing.JLabel SocialNameText3;
     private javax.swing.JLabel SocialNameText4;
     private javax.swing.JScrollPane TableScrollPanel;

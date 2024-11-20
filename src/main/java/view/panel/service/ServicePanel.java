@@ -1,8 +1,7 @@
 package view.panel.service;
 
-import controller.HomeDAO;
+import controller.MainDAO;
 import view.panel.appointment.NewAppointmentPanel;
-import view.view_Home;
 
 public class ServicePanel extends javax.swing.JPanel 
 {
@@ -360,16 +359,16 @@ public class ServicePanel extends javax.swing.JPanel
 
     private void NewAppointmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewAppointmentBtnActionPerformed
         NewAppointmentPanel newAppointmentPanel = new NewAppointmentPanel();   
-        HomeDAO.Singleton.INSTANCE.getHome().SetScrollPanel(newAppointmentPanel);
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newAppointmentPanel);
     }//GEN-LAST:event_NewAppointmentBtnActionPerformed
 
     private void ShowPrescriptionsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowPrescriptionsBtnActionPerformed
-        HomeDAO.Singleton.INSTANCE.getHome().SetScrollPanel(HomeDAO.Singleton.INSTANCE.getHome().prescriptionsPanel);
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().prescriptionsPanel);
     }//GEN-LAST:event_ShowPrescriptionsBtnActionPerformed
 
     private void FinishServiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinishServiceBtnActionPerformed
         FinishServicePanel finishServicePanel = new FinishServicePanel();
-        HomeDAO.Singleton.INSTANCE.getHome().SetScrollPanel(finishServicePanel);
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(finishServicePanel);
     }//GEN-LAST:event_FinishServiceBtnActionPerformed
 
     private void FinishServiceBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinishServiceBtn1ActionPerformed

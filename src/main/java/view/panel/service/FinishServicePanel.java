@@ -1,8 +1,5 @@
 package view.panel.service;
 
-import controller.HomeDAO;
-import view.view_Home;
-
 public class FinishServicePanel extends javax.swing.JPanel 
 {
     public FinishServicePanel() 
@@ -188,7 +185,7 @@ public class FinishServicePanel extends javax.swing.JPanel
                         .addComponent(ObsPanel16)
                         .addComponent(ObsPanel17)
                         .addComponent(ObsPanel18)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         ServicePanelLayout.setVerticalGroup(
             ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +230,7 @@ public class FinishServicePanel extends javax.swing.JPanel
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1054, Short.MAX_VALUE)
+            .addGap(0, 1030, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(ServicePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

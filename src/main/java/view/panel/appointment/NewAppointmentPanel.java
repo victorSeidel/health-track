@@ -1,8 +1,5 @@
 package view.panel.appointment;
 
-import controller.HomeDAO;
-import view.view_Home;
-
 public class NewAppointmentPanel extends javax.swing.JPanel 
 {
     public NewAppointmentPanel() 

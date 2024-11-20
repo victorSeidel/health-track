@@ -418,9 +418,7 @@ public class view_Register extends javax.swing.JFrame
     
     private void Login()
     {
-        view_Home viewHome = new view_Home();
-        viewHome.setVisible(true);
-        this.dispose();
+        
     }
     
     private void Register()

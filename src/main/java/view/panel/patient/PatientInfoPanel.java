@@ -1,6 +1,6 @@
 package view.panel.patient;
 
-import controller.HomeDAO;
+import controller.MainDAO;
 
 public class PatientInfoPanel extends javax.swing.JPanel 
 {
@@ -762,7 +762,7 @@ public class PatientInfoPanel extends javax.swing.JPanel
     }// </editor-fold>//GEN-END:initComponents
 
     private void GoToMedicalRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToMedicalRecordBtnActionPerformed
-        HomeDAO.Singleton.INSTANCE.getHome().SetScrollPanel(HomeDAO.Singleton.INSTANCE.getHome().medicalRecordPanel);
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().medicalRecordPanel);
     }//GEN-LAST:event_GoToMedicalRecordBtnActionPerformed
 
 

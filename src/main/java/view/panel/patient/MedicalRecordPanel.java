@@ -1,6 +1,6 @@
 package view.panel.patient;
 
-import controller.HomeDAO;
+import controller.MainDAO;
 
 public class MedicalRecordPanel extends javax.swing.JPanel 
 {
@@ -382,7 +382,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MedicalRecordPanelLayout.createSequentialGroup()
                         .addComponent(UpdateHistoryBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(PrintRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(PrintRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         MedicalRecordPanelLayout.setVerticalGroup(
@@ -487,11 +487,11 @@ public class MedicalRecordPanel extends javax.swing.JPanel
     }// </editor-fold>//GEN-END:initComponents
 
     private void PrescriptionsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrescriptionsBtnActionPerformed
-        HomeDAO.Singleton.INSTANCE.getHome().SetScrollPanel(HomeDAO.Singleton.INSTANCE.getHome().prescriptionsPanel);
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().prescriptionsPanel);
     }//GEN-LAST:event_PrescriptionsBtnActionPerformed
 
     private void ClinicalEvolutionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicalEvolutionBtnActionPerformed
-        HomeDAO.Singleton.INSTANCE.getHome().SetScrollPanel(HomeDAO.Singleton.INSTANCE.getHome().clinicalEvolutionPanel);
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().clinicalEvolutionPanel);
     }//GEN-LAST:event_ClinicalEvolutionBtnActionPerformed
 
 

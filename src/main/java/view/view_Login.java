@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Cursor;
 import java.awt.event.KeyEvent;
+import view.panel.sidebar.MainSideBarPanel;
 
 public class view_Login extends javax.swing.JFrame
 {
@@ -303,7 +304,10 @@ public class view_Login extends javax.swing.JFrame
     
     private void Login()
     {
-        view_Main viewMain = new view_Main();
+        view_Main viewMain                = new view_Main();
+        MainSideBarPanel mainSideBarPanel = new MainSideBarPanel();
+        
+        viewMain.SetSideBarPanel(mainSideBarPanel);
         viewMain.setVisible(true);
         this.dispose();
     }

@@ -27,7 +27,7 @@ import javax.swing.table.TableColumnModel;
 import controller.AttachmentDAO;
 import model.AttachmentDTO;
 import org.apache.commons.io.FilenameUtils;
-import view.view_Home;
+import view.panel.sidebar.ServiceSideBarPanel;
 
 public class ServicesListPanel extends javax.swing.JPanel 
 {
@@ -152,9 +152,10 @@ public class ServicesListPanel extends javax.swing.JPanel
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartServiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartServiceBtnActionPerformed
-        view_Home viewHome = new view_Home();
-        viewHome.setVisible(true);
-        MainDAO.Singleton.INSTANCE.getMain().dispose();
+        ServiceSideBarPanel serviceSideBarPanel = new ServiceSideBarPanel();
+        
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(null);
+        MainDAO.Singleton.INSTANCE.getMain().SetSideBarPanel(serviceSideBarPanel);
     }//GEN-LAST:event_StartServiceBtnActionPerformed
 
 

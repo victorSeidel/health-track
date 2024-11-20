@@ -1,7 +1,5 @@
 package controller;
 
-import view.view_Home;
-
 public class SettingsDAO 
 {
     public enum Singleton

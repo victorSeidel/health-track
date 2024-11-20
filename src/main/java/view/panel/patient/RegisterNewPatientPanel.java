@@ -1,6 +1,5 @@
 package view.panel.patient;
 
-import controller.HomeDAO;
 import controller.MainDAO;
 
 public class RegisterNewPatientPanel extends javax.swing.JPanel 
