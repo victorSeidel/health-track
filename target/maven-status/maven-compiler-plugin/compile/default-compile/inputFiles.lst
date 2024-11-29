@@ -16,11 +16,13 @@ C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\view\panel\service\Serv
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\controller\PredefinedTextDAO.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\view\panel\appointment\NewAppointmentPanel.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\controller\MainDAO.java
+C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\model\ProfessionalDTO.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\view\panel\prescription\NewExamPanel.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\model\ExamDTO.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\view\panel\patient\RegisterNewMedicalRecordPanel.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\view\panel\sidebar\MainSideBarPanel.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\view\panel\prescription\NewRecipePanel.java
+C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\controller\ProfessionalDAO.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\view\view_Login.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\view\panel\prescription\NewReferralPanel.java
 C:\Users\Victor Seidel\Desktop\HealthTrack\src\main\java\controller\PatientDAO.java

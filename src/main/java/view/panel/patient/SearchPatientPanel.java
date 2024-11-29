@@ -131,15 +131,16 @@ public class SearchPatientPanel extends javax.swing.JPanel
         PatientsTable.setShowGrid(true);
         TableScrollPanel.setViewportView(PatientsTable);
         if (PatientsTable.getColumnModel().getColumnCount() > 0) {
-            PatientsTable.getColumnModel().getColumn(0).setMinWidth(25);
-            PatientsTable.getColumnModel().getColumn(0).setPreferredWidth(25);
+            PatientsTable.getColumnModel().getColumn(0).setMinWidth(0);
+            PatientsTable.getColumnModel().getColumn(0).setPreferredWidth(0);
+            PatientsTable.getColumnModel().getColumn(0).setMaxWidth(0);
             PatientsTable.getColumnModel().getColumn(1).setMinWidth(200);
             PatientsTable.getColumnModel().getColumn(1).setPreferredWidth(200);
             PatientsTable.getColumnModel().getColumn(2).setMinWidth(100);
             PatientsTable.getColumnModel().getColumn(2).setPreferredWidth(100);
             PatientsTable.getColumnModel().getColumn(2).setMaxWidth(100);
             PatientsTable.getColumnModel().getColumn(3).setMinWidth(150);
-            PatientsTable.getColumnModel().getColumn(3).setPreferredWidth(150);
+            PatientsTable.getColumnModel().getColumn(3).setPreferredWidth(200);
         }
 
         CancelBtn.setBackground(new java.awt.Color(204, 0, 0));
@@ -325,9 +326,24 @@ public class SearchPatientPanel extends javax.swing.JPanel
 
         if (type == 'R')
         {
+            MedicalRecordDAO medicalRecordDAO = new  MedicalRecordDAO();
+            MedicalRecordDTO medicalRecord = null;
+            
+            try 
+            {
+                medicalRecord = medicalRecordDAO.Select(patient.getId());
+            } 
+            catch (SQLException ex) 
+            {
+                System.out.println("Error (SearchPatientPanel): " + ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Error: Não foi possível criar um novo prontuário.");
+            }
+                     
+            SettingsDAO.Singleton.INSTANCE.setMedicalRecord(medicalRecord);
+            
             RegisterNewMedicalRecordPanel r = new RegisterNewMedicalRecordPanel();
             
-            r.SetData(patient);
+            r.SetData();
             
             MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(r);
         }
@@ -335,7 +351,9 @@ public class SearchPatientPanel extends javax.swing.JPanel
     
     private void UpdateTable()
     {
-        PatientDAO examDAO             = new PatientDAO();
+        PatientDAO examDAO                = new PatientDAO();
+        MedicalRecordDAO medicalRecordDAO = new MedicalRecordDAO();
+        
         ArrayList<PatientDTO> patients = examDAO.List(GetFilterColumn(), FilterValueFld.getText());
 
         DefaultTableModel tableModel = (DefaultTableModel) PatientsTable.getModel();

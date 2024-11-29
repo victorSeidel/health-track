@@ -64,6 +64,8 @@ public class MedicalRecordPanel extends javax.swing.JPanel
         PrintRecordBtn = new javax.swing.JButton();
         ClinicalEvolutionBtn = new javax.swing.JButton();
 
+        setLayout(new java.awt.BorderLayout());
+
         MedicalRecordPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         PersonalInfoText1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -78,7 +80,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
         NameText1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         CodeFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        CodeFld.setText("123456");
+        CodeFld.setText("-");
         CodeFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         SocialNameText1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -87,7 +89,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
         SocialNameText1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         PatientCodeFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        PatientCodeFld.setText("000000");
+        PatientCodeFld.setText("-");
         PatientCodeFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         BirthDateText1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -96,7 +98,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
         BirthDateText1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         PatientNameFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        PatientNameFld.setText("VICTOR GABRIEL MARTINS SEIDEL");
+        PatientNameFld.setText("-");
         PatientNameFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         PersonalInfoText2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -154,7 +156,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
         BloodTypeText1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         BloodTypeFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        BloodTypeFld.setText("O+");
+        BloodTypeFld.setText("-");
         BloodTypeFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         WeightText1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -163,7 +165,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
         WeightText1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         WeightFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        WeightFld.setText("60 kg");
+        WeightFld.setText("-");
         WeightFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         HeightText1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -172,7 +174,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
         HeightText1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         HeightFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        HeightFld.setText("181 cm");
+        HeightFld.setText("-");
         HeightFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         AllergiesText1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -323,7 +325,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
         MedicalRecordPanelLayout.setHorizontalGroup(
             MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MedicalRecordPanelLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AdditionalDataText1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(MedicalRecordPanelLayout.createSequentialGroup()
@@ -386,7 +388,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
                         .addComponent(UpdateHistoryBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(PrintRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
         MedicalRecordPanelLayout.setVerticalGroup(
             MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,21 +474,7 @@ public class MedicalRecordPanel extends javax.swing.JPanel
                 .addGap(47, 47, 47))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(MedicalRecordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(MedicalRecordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(MedicalRecordPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void PrescriptionsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrescriptionsBtnActionPerformed

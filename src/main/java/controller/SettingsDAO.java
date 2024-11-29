@@ -2,12 +2,23 @@ package controller;
 
 import model.MedicalRecordDTO;
 import model.PatientDTO;
+import model.ProfessionalDTO;
 
 public class SettingsDAO 
 {
     public enum Singleton
     {
         INSTANCE;
+        
+        private ProfessionalDTO professional;
+
+        public ProfessionalDTO getProfessional() {
+            return professional;
+        }
+
+        public void setProfessional(ProfessionalDTO professional) {
+            this.professional = professional;
+        }
         
         private PatientDTO patient;
         

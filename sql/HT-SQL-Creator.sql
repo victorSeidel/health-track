@@ -1,6 +1,22 @@
 CREATE DATABASE HealthTrackDB;
 USE HealthTrackDB;
 
+CREATE TABLE Professional (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    user VARCHAR(10) NOT NULL,
+    password VARCHAR(10) NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    phone VARCHAR(50),
+    email VARCHAR(50),
+    birthDate DATE,
+	registerType VARCHAR(20),
+    registerNumber VARCHAR(20),
+    specialty VARCHAR(100),
+    status VARCHAR(15),
+    permissions VARCHAR(10)
+);
+
 CREATE TABLE Patient (
 	id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
@@ -21,7 +37,7 @@ CREATE TABLE Patient (
     emergencyName VARCHAR(50),
     emergencyRelation VARCHAR(15),
     adress VARCHAR(100) NOT NULL,
-    status VARCHAR(15)
+    status VARCHAR(15) DEFAULT "Sem prontuário"
 );
 
 CREATE TABLE MedicalRecord (
@@ -37,14 +53,9 @@ CREATE TABLE MedicalRecord (
 	familyHistory VARCHAR(255),
 	surgeryHistory VARCHAR(255),
 	observations VARCHAR(255),
-	status VARCHAR(15),
+	status VARCHAR(15) DEFAULT "Ativo",
     
 	FOREIGN KEY (patientId) REFERENCES Patient(id) ON DELETE CASCADE
-);
-
-CREATE TABLE Professional (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Attachment (
@@ -140,5 +151,3 @@ CREATE TABLE PredefinedText (
     type INT NOT NULL,		
     text VARCHAR(255) NOT NULL
 );
-
-SELECT * FROM PredefinedText;

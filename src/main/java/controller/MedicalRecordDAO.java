@@ -125,6 +125,37 @@ public class MedicalRecordDAO
         return medicalRecord;
     } 
     
+    public boolean Update(MedicalRecordDTO medicalRecord) 
+    {
+        String sql = "UPDATE MedicalRecord SET "
+                + "allergies = ?, bloodType = ?, diseases = ?, diseasesHistory = ?, familyHistory = ?, height = ?, medications = ?, observations = ?, status = ?, "
+                + "surgeryHistory = ?, weight = ? WHERE patientId = ?";
+
+        try (Connection conn = new ConnectDAO().ConnectDB(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, medicalRecord.getAllergies());
+            ps.setString(2, medicalRecord.getBloodType());
+            ps.setString(3, medicalRecord.getDiseases());
+            ps.setString(4, medicalRecord.getDiseasesHistory());
+            ps.setString(5, medicalRecord.getFamilyHistory());
+            ps.setDouble(6, medicalRecord.getHeight());
+            ps.setString(7, medicalRecord.getMedications());
+            ps.setString(8, medicalRecord.getObservations());
+            ps.setString(9, medicalRecord.getStatus());
+            ps.setString(10, medicalRecord.getSurgeryHistory());
+            ps.setDouble(11, medicalRecord.getWeight());
+            ps.setInt(12, medicalRecord.getPatientId());
+
+            int rowsAffected = ps.executeUpdate();
+
+            return rowsAffected > 0;
+
+        } catch (SQLException e) 
+        {
+            System.out.println("Error (MedicalRecordDAO Update): " + e.getMessage());
+            return false;
+        }
+    }
+    
     public boolean Delete(int id) 
     {
         String sql = "DELETE FROM MedicalRecord WHERE id = ?";

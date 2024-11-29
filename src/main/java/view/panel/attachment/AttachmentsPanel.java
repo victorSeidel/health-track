@@ -24,6 +24,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
 import controller.AttachmentDAO;
+import controller.SettingsDAO;
 import model.AttachmentDTO;
 import org.apache.commons.io.FilenameUtils;
 
@@ -274,7 +275,7 @@ public class AttachmentsPanel extends javax.swing.JPanel
                                         
                     attachment.setTitle(input);
                     attachment.setPath(destinyFile.toString());
-                    attachment.setProfessionalId(1);
+                    attachment.setProfessionalId(SettingsDAO.Singleton.INSTANCE.getProfessional().getId());
 
                     if (!attachmentDAO.Insert(attachment)) 
                     {

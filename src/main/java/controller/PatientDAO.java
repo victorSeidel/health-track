@@ -13,7 +13,7 @@ public class PatientDAO
     {
         String sql = "INSERT INTO Patient"
             + "(id, name, socialName, birthDate, nationality, naturalness, race, sex, cpf, mother, father, guardian, phone1, phone2, email, "
-            + "emergencyPhone, emergencyName, emergencyRelation, adress) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            + "emergencyPhone, emergencyName, emergencyRelation, adress, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
         try (Connection conn = new ConnectDAO().ConnectDB(); PreparedStatement ps = conn.prepareStatement(sql)) 
         {
@@ -36,6 +36,7 @@ public class PatientDAO
             ps.setString(17, patient.getEmergencyName());
             ps.setString(18, patient.getEmergencyRelation());
             ps.setString(19, patient.getAdress());
+            ps.setString(20, patient.getStatus());
 
             int rowsAffected = ps.executeUpdate();
 
@@ -86,6 +87,7 @@ public class PatientDAO
                     patient.setEmergencyName(rs.getString("emergencyName"));
                     patient.setEmergencyRelation(rs.getString("emergencyRelation"));
                     patient.setAdress(rs.getString("adress"));
+                    patient.setStatus(rs.getString("status"));
 
                     list.add(patient);
                 }    
@@ -102,7 +104,7 @@ public class PatientDAO
     
     public PatientDTO Select(int id) throws SQLException
     {
-        PatientDTO patient = new PatientDTO();
+        PatientDTO patient = null;
         String sql = "SELECT * FROM Patient WHERE id = ?";
         
         try (Connection conn = new ConnectDAO().ConnectDB(); PreparedStatement ps = conn.prepareStatement(sql))
@@ -113,6 +115,7 @@ public class PatientDAO
             {
                 if (rs.next()) 
                 {
+                    patient = new PatientDTO();
                     patient.setId(rs.getInt("id"));
                     patient.setName(rs.getString("name"));
                     patient.setSocialName(rs.getString("socialName"));
@@ -132,6 +135,7 @@ public class PatientDAO
                     patient.setEmergencyName(rs.getString("emergencyName"));
                     patient.setEmergencyRelation(rs.getString("emergencyRelation"));
                     patient.setAdress(rs.getString("adress"));
+                    patient.setStatus(rs.getString("status"));
                 }   
                 return patient;
             } 

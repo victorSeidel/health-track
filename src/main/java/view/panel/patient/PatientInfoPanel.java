@@ -1,7 +1,9 @@
 package view.panel.patient;
 
 import controller.MainDAO;
+import controller.PatientDAO;
 import controller.SettingsDAO;
+import javax.swing.JOptionPane;
 import model.PatientDTO;
 
 public class PatientInfoPanel extends javax.swing.JPanel 
@@ -86,9 +88,9 @@ public class PatientInfoPanel extends javax.swing.JPanel
         ObsFld = new javax.swing.JTextPane();
         StatusText = new javax.swing.JLabel();
         StatusFld = new javax.swing.JLabel();
-        DeleteRegisterBtn = new javax.swing.JButton();
+        UpdateHistory = new javax.swing.JButton();
         EditDataBtn = new javax.swing.JButton();
-        UpdateHistoryBtn2 = new javax.swing.JButton();
+        DeleteBtn = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -425,13 +427,13 @@ public class PatientInfoPanel extends javax.swing.JPanel
         StatusFld.setText("ATIVO");
         StatusFld.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        DeleteRegisterBtn.setBackground(new java.awt.Color(0, 0, 102));
-        DeleteRegisterBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        DeleteRegisterBtn.setForeground(new java.awt.Color(255, 255, 255));
-        DeleteRegisterBtn.setText("Histórico de atualizações");
-        DeleteRegisterBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        DeleteRegisterBtn.setBorderPainted(false);
-        DeleteRegisterBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        UpdateHistory.setBackground(new java.awt.Color(0, 0, 102));
+        UpdateHistory.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        UpdateHistory.setForeground(new java.awt.Color(255, 255, 255));
+        UpdateHistory.setText("Histórico de atualizações");
+        UpdateHistory.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        UpdateHistory.setBorderPainted(false);
+        UpdateHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         EditDataBtn.setBackground(new java.awt.Color(0, 0, 102));
         EditDataBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -441,13 +443,18 @@ public class PatientInfoPanel extends javax.swing.JPanel
         EditDataBtn.setBorderPainted(false);
         EditDataBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        UpdateHistoryBtn2.setBackground(new java.awt.Color(204, 0, 0));
-        UpdateHistoryBtn2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        UpdateHistoryBtn2.setForeground(new java.awt.Color(255, 255, 255));
-        UpdateHistoryBtn2.setText("Excluir cadastro");
-        UpdateHistoryBtn2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        UpdateHistoryBtn2.setBorderPainted(false);
-        UpdateHistoryBtn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DeleteBtn.setBackground(new java.awt.Color(204, 0, 0));
+        DeleteBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        DeleteBtn.setForeground(new java.awt.Color(255, 255, 255));
+        DeleteBtn.setText("Excluir cadastro");
+        DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DeleteBtn.setBorderPainted(false);
+        DeleteBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
@@ -585,7 +592,7 @@ public class PatientInfoPanel extends javax.swing.JPanel
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                                                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                     .addGroup(BackgroundLayout.createSequentialGroup()
-                                                        .addComponent(UpdateHistoryBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(DeleteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addGap(18, 18, 18)
                                                         .addComponent(EditDataBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addComponent(ObsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -593,7 +600,7 @@ public class PatientInfoPanel extends javax.swing.JPanel
                                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(StatusFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(StatusText, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(DeleteRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(UpdateHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(47, 47, 47))))
         );
         BackgroundLayout.setVerticalGroup(
@@ -744,9 +751,9 @@ public class PatientInfoPanel extends javax.swing.JPanel
                     .addComponent(StatusFld, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DeleteRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UpdateHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EditDataBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UpdateHistoryBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47))
         );
 
@@ -756,6 +763,10 @@ public class PatientInfoPanel extends javax.swing.JPanel
     private void GoToMedicalRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToMedicalRecordBtnActionPerformed
         MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().medicalRecordPanel);
     }//GEN-LAST:event_GoToMedicalRecordBtnActionPerformed
+
+    private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
+        DeletePatient();
+    }//GEN-LAST:event_DeleteBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -774,7 +785,7 @@ public class PatientInfoPanel extends javax.swing.JPanel
     private javax.swing.JLabel CnsText;
     private javax.swing.JLabel CpfFld;
     private javax.swing.JLabel CpfText;
-    private javax.swing.JButton DeleteRegisterBtn;
+    private javax.swing.JButton DeleteBtn;
     private javax.swing.JTextPane DiseasesFld;
     private javax.swing.JScrollPane DiseasesPanel;
     private javax.swing.JLabel DiseasesText;
@@ -830,7 +841,7 @@ public class PatientInfoPanel extends javax.swing.JPanel
     private javax.swing.JLabel SocialNameText;
     private javax.swing.JLabel StatusFld;
     private javax.swing.JLabel StatusText;
-    private javax.swing.JButton UpdateHistoryBtn2;
+    private javax.swing.JButton UpdateHistory;
     private javax.swing.JLabel WeightFld;
     private javax.swing.JLabel WeightText;
     // End of variables declaration//GEN-END:variables
@@ -858,5 +869,21 @@ public class PatientInfoPanel extends javax.swing.JPanel
         EmNameFld.setText(patient.getEmergencyName());
         EmRelationFld.setText(patient.getEmergencyRelation());
         AdressFld.setText(patient.getAdress());
+    }
+    
+    private void DeletePatient()
+    {
+        if (JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir esse cadastro?", "Excluir cadastro", JOptionPane.YES_NO_CANCEL_OPTION) != JOptionPane.YES_OPTION) return;
+        
+        int id = Integer.parseInt(PatientIdFld.getText());
+        
+        PatientDAO patientDAO = new PatientDAO();
+        
+        if (!patientDAO.Delete(id))
+        {
+            JOptionPane.showMessageDialog(null, "Erro ao excluir cadastro.");
+        }
+        
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(null);
     }
 }

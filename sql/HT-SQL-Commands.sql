@@ -1,5 +1,7 @@
 USE HealthTrackDB;
 
+DROP DATABSE HealthTrackDB;
+
 SELECT * FROM Patient;
 
 SELECT * FROM MedicalRecord;

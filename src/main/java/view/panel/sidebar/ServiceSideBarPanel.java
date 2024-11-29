@@ -2,6 +2,9 @@ package view.panel.sidebar;
 
 import controller.MainDAO;
 import controller.SettingsDAO;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+import javax.swing.JPanel;
 import view.panel.ClinicalEvolutionPanel;
 import view.panel.prescription.PrescriptionsPanel;
 import view.panel.appointment.NewAppointmentPanel;
@@ -157,62 +160,56 @@ public class ServiceSideBarPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MedicalRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicalRecordBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            MedicalRecordPanel newMedicalRecordPanel = new MedicalRecordPanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newMedicalRecordPanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().medicalRecordPanel);
+        SwitchPanel(
+            MainDAO.Singleton.INSTANCE.getMain().medicalRecordPanel,
+            MedicalRecordPanel::new,
+            panel -> MainDAO.Singleton.INSTANCE.getMain().medicalRecordPanel = (MedicalRecordPanel) panel
+        );
     }//GEN-LAST:event_MedicalRecordBtnActionPerformed
 
     private void ServiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            ServicePanel newServicePanel = new ServicePanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newServicePanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().servicePanel);
+        SwitchPanel(
+            MainDAO.Singleton.INSTANCE.getMain().servicePanel,
+            ServicePanel::new,
+            panel -> MainDAO.Singleton.INSTANCE.getMain().servicePanel = (ServicePanel) panel
+        );
     }//GEN-LAST:event_ServiceBtnActionPerformed
 
     private void newAppointmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAppointmentBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            NewAppointmentPanel newNewAppointmentPanel = new NewAppointmentPanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newNewAppointmentPanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().newAppointmentPanel);
+        SwitchPanel(
+            MainDAO.Singleton.INSTANCE.getMain().newAppointmentPanel,
+            NewAppointmentPanel::new,
+            panel -> MainDAO.Singleton.INSTANCE.getMain().newAppointmentPanel = (NewAppointmentPanel) panel
+        );
     }//GEN-LAST:event_newAppointmentBtnActionPerformed
 
     private void PrescriptionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrescriptionBtnActionPerformed
-        PrescriptionsPanel newPrescriptionsPanel = new PrescriptionsPanel();
-        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newPrescriptionsPanel);
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(new PrescriptionsPanel());
     }//GEN-LAST:event_PrescriptionBtnActionPerformed
 
     private void AttachmentsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttachmentsBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            AttachmentsPanel newAttachmentsPanel = new AttachmentsPanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newAttachmentsPanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().attachmentsPanel);
+        SwitchPanel(
+            MainDAO.Singleton.INSTANCE.getMain().attachmentsPanel,
+            AttachmentsPanel::new,
+            panel -> MainDAO.Singleton.INSTANCE.getMain().attachmentsPanel = (AttachmentsPanel) panel
+        );
     }//GEN-LAST:event_AttachmentsBtnActionPerformed
 
     private void ClinicalEvolutionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClinicalEvolutionBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            ClinicalEvolutionPanel newClinicalEvolutionPanel = new ClinicalEvolutionPanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newClinicalEvolutionPanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().clinicalEvolutionPanel);
+        SwitchPanel(
+            MainDAO.Singleton.INSTANCE.getMain().clinicalEvolutionPanel,
+            ClinicalEvolutionPanel::new,
+            panel -> MainDAO.Singleton.INSTANCE.getMain().clinicalEvolutionPanel = (ClinicalEvolutionPanel) panel
+        );
     }//GEN-LAST:event_ClinicalEvolutionBtnActionPerformed
 
     private void PatientInfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientInfoBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            PatientInfoPanel newPatientInfoPanel = new PatientInfoPanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newPatientInfoPanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().patientInfoPanel);
+        SwitchPanel(
+            MainDAO.Singleton.INSTANCE.getMain().patientInfoPanel,
+            PatientInfoPanel::new,
+            panel -> MainDAO.Singleton.INSTANCE.getMain().patientInfoPanel = (PatientInfoPanel) panel
+
+        );
     }//GEN-LAST:event_PatientInfoBtnActionPerformed
 
 
@@ -226,4 +223,18 @@ public class ServiceSideBarPanel extends javax.swing.JPanel {
     private javax.swing.JButton ServiceBtn;
     private javax.swing.JButton newAppointmentBtn;
     // End of variables declaration//GEN-END:variables
+
+    private void SwitchPanel(JPanel currentPanel, Supplier<JPanel> panelSupplier, Consumer<JPanel> panelSetter) 
+    {
+        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel() || currentPanel == null) 
+        {
+            JPanel newPanel = panelSupplier.get();
+            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newPanel);
+            panelSetter.accept(newPanel);
+        } 
+        else 
+        {
+            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(currentPanel);
+        }
+    }
 }

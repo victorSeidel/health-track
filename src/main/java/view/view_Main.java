@@ -218,19 +218,19 @@ public class view_Main extends javax.swing.JFrame
     private javax.swing.JLabel SoftwareNameText;
     // End of variables declaration//GEN-END:variables
     
-    public SearchPatientPanel searchPatientPanel                         = new SearchPatientPanel();
-    public RegisterNewPatientPanel registerNewPatientPanel               = new RegisterNewPatientPanel();
-    public RegisterNewMedicalRecordPanel registerNewMedicalRecordPanel   = new RegisterNewMedicalRecordPanel();   
-    public ServicesListPanel servicesListPanel                           = new ServicesListPanel();
-    public NewAppointmentPanel newAppointmentPanel                       = new NewAppointmentPanel();
+    public SearchPatientPanel searchPatientPanel                         = null;
+    public RegisterNewPatientPanel registerNewPatientPanel               = null;
+    public RegisterNewMedicalRecordPanel registerNewMedicalRecordPanel   = null;   
+    public ServicesListPanel servicesListPanel                           = null;
+    public NewAppointmentPanel newAppointmentPanel                       = null;
     
-    public PatientInfoPanel patientInfoPanel             = new PatientInfoPanel();
-    public MedicalRecordPanel medicalRecordPanel         = new MedicalRecordPanel();
-    public ShowAppointmentsPanel showAppointmentsPanel   = new ShowAppointmentsPanel();
-    public ServicePanel servicePanel                     = new ServicePanel();
-    public PrescriptionsPanel prescriptionsPanel         = new PrescriptionsPanel();
-    public AttachmentsPanel attachmentsPanel             = new AttachmentsPanel();
-    public ClinicalEvolutionPanel clinicalEvolutionPanel = new ClinicalEvolutionPanel();
+    public PatientInfoPanel patientInfoPanel             = null;
+    public MedicalRecordPanel medicalRecordPanel         = null;
+    public ShowAppointmentsPanel showAppointmentsPanel   = null;
+    public ServicePanel servicePanel                     = null;
+    public PrescriptionsPanel prescriptionsPanel         = null;
+    public AttachmentsPanel attachmentsPanel             = null;
+    public ClinicalEvolutionPanel clinicalEvolutionPanel = null;
 
     public void SetScrollPanel(JPanel newPanel)
     {

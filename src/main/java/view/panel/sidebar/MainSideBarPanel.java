@@ -2,6 +2,9 @@ package view.panel.sidebar;
 
 import controller.MainDAO;
 import controller.SettingsDAO;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+import javax.swing.JPanel;
 import view.panel.appointment.NewAppointmentPanel;
 import view.panel.patient.RegisterNewPatientPanel;
 import view.panel.patient.SearchPatientPanel;
@@ -70,7 +73,7 @@ public class MainSideBarPanel extends javax.swing.JPanel {
         NewMedicalRecordBtn.setBackground(new java.awt.Color(0, 0, 102));
         NewMedicalRecordBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         NewMedicalRecordBtn.setForeground(new java.awt.Color(255, 255, 255));
-        NewMedicalRecordBtn.setText("Iniciar novo prontuário");
+        NewMedicalRecordBtn.setText("Iniciar ou editar prontuário");
         NewMedicalRecordBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         NewMedicalRecordBtn.setBorderPainted(false);
         NewMedicalRecordBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -154,12 +157,11 @@ public class MainSideBarPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ServiceListBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceListBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            ServicesListPanel newServicesListPanel = new ServicesListPanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newServicesListPanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().servicesListPanel);
+        SwitchPanel(
+            MainDAO.Singleton.INSTANCE.getMain().servicesListPanel,
+            ServicesListPanel::new,
+            panel -> MainDAO.Singleton.INSTANCE.getMain().servicesListPanel = (ServicesListPanel) panel
+        );
     }//GEN-LAST:event_ServiceListBtnActionPerformed
 
     private void ShowScheduleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowScheduleBtnActionPerformed
@@ -167,42 +169,49 @@ public class MainSideBarPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_ShowScheduleBtnActionPerformed
 
     private void NewAppointmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewAppointmentBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            NewAppointmentPanel newNewAppointmentPanel = new NewAppointmentPanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newNewAppointmentPanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().newAppointmentPanel);
+        SwitchPanel(
+            MainDAO.Singleton.INSTANCE.getMain().newAppointmentPanel,
+            NewAppointmentPanel::new,
+            panel -> MainDAO.Singleton.INSTANCE.getMain().newAppointmentPanel = (NewAppointmentPanel) panel
+        );
     }//GEN-LAST:event_NewAppointmentBtnActionPerformed
 
     private void SearchPatientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchPatientBtnActionPerformed
         SearchPatientPanel newSearchPatientPanel = new SearchPatientPanel();
+        
         newSearchPatientPanel.setType('P');
         newSearchPatientPanel.setTitle("BUSCAR PACIENTE");
+        
         MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newSearchPatientPanel);
+        MainDAO.Singleton.INSTANCE.getMain().searchPatientPanel = newSearchPatientPanel;
     }//GEN-LAST:event_SearchPatientBtnActionPerformed
 
     private void RegisterNewPatientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterNewPatientBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            RegisterNewPatientPanel newRegisterNewPatientPanel = new RegisterNewPatientPanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newRegisterNewPatientPanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().registerNewPatientPanel);
+        SwitchPanel(
+            MainDAO.Singleton.INSTANCE.getMain().registerNewPatientPanel,
+            RegisterNewPatientPanel::new,
+            panel -> MainDAO.Singleton.INSTANCE.getMain().registerNewPatientPanel = (RegisterNewPatientPanel) panel
+        );
     }//GEN-LAST:event_RegisterNewPatientBtnActionPerformed
 
     private void SearchMedicalRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchMedicalRecordBtnActionPerformed
         SearchPatientPanel newSearchPatientPanel = new SearchPatientPanel();
+        
         newSearchPatientPanel.setType('M');
         newSearchPatientPanel.setTitle("BUSCAR PRONTUÁRIO");
+        
         MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newSearchPatientPanel);
+        MainDAO.Singleton.INSTANCE.getMain().searchPatientPanel = newSearchPatientPanel;
     }//GEN-LAST:event_SearchMedicalRecordBtnActionPerformed
 
     private void NewMedicalRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewMedicalRecordBtnActionPerformed
         SearchPatientPanel newSearchPatientPanel = new SearchPatientPanel();
+        
         newSearchPatientPanel.setType('R');
         newSearchPatientPanel.setTitle("NOVO PRONTUÁRIO");
+        
         MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newSearchPatientPanel);
+        MainDAO.Singleton.INSTANCE.getMain().searchPatientPanel = newSearchPatientPanel;
     }//GEN-LAST:event_NewMedicalRecordBtnActionPerformed
 
 
@@ -216,4 +225,18 @@ public class MainSideBarPanel extends javax.swing.JPanel {
     private javax.swing.JButton ServiceListBtn;
     private javax.swing.JButton ShowScheduleBtn;
     // End of variables declaration//GEN-END:variables
+
+    private void SwitchPanel(JPanel currentPanel, Supplier<JPanel> panelSupplier, Consumer<JPanel> panelSetter) 
+    {
+        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel() || currentPanel == null) 
+        {
+            JPanel newPanel = panelSupplier.get();
+            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newPanel);
+            panelSetter.accept(newPanel);
+        } 
+        else 
+        {
+            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(currentPanel);
+        }
+    }
 }

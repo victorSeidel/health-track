@@ -1,7 +1,15 @@
 package view;
 
+import controller.ProfessionalDAO;
+import controller.SettingsDAO;
 import java.awt.Cursor;
 import java.awt.event.KeyEvent;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import model.ProfessionalDTO;
 import view.panel.sidebar.MainSideBarPanel;
 
 public class view_Login extends javax.swing.JFrame
@@ -304,9 +312,29 @@ public class view_Login extends javax.swing.JFrame
     
     private void Login()
     {
+        ProfessionalDTO professional = null;
+        try 
+        {
+            ProfessionalDAO professionalDAO = new ProfessionalDAO();
+            
+            professional = professionalDAO.Select(UserFld.getText(), Arrays.toString(PasswordFld.getPassword()));
+        } 
+        catch (SQLException ex) 
+        {
+            System.out.println("Error (view_Login): " + ex.getMessage());
+        }
+        
+        if (professional == null)
+        {
+            ErrorText.setText("Usuário ou senha errados.");
+            return;
+        }
+        
+        SettingsDAO.Singleton.INSTANCE.setProfessional(professional);
+        
         view_Main viewMain                = new view_Main();
         MainSideBarPanel mainSideBarPanel = new MainSideBarPanel();
-        
+
         viewMain.SetSideBarPanel(mainSideBarPanel);
         viewMain.setVisible(true);
         this.dispose();

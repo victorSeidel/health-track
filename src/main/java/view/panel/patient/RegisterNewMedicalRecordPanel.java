@@ -2,6 +2,7 @@ package view.panel.patient;
 
 import controller.MainDAO;
 import controller.MedicalRecordDAO;
+import controller.SettingsDAO;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import model.MedicalRecordDTO;
@@ -12,6 +13,8 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
     public RegisterNewMedicalRecordPanel() 
     {
         initComponents();
+        
+        SetData();
     }
     @SuppressWarnings("unchecked")
     
@@ -38,7 +41,7 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
         AdditionalDataText1 = new javax.swing.JLabel();
         CancelBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
-        NameFld2 = new javax.swing.JTextField();
+        MedicalRecordIdFld = new javax.swing.JTextField();
         PatientCodeFld = new javax.swing.JTextField();
         PatientNameFld = new javax.swing.JTextField();
         BloodTypeFld = new javax.swing.JTextField();
@@ -175,11 +178,11 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
             }
         });
 
-        NameFld2.setEditable(false);
-        NameFld2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        NameFld2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        NameFld2.setFocusable(false);
-        NameFld2.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        MedicalRecordIdFld.setEditable(false);
+        MedicalRecordIdFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        MedicalRecordIdFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        MedicalRecordIdFld.setFocusable(false);
+        MedicalRecordIdFld.setMargin(new java.awt.Insets(2, 2, 2, 10));
 
         PatientCodeFld.setEditable(false);
         PatientCodeFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -319,7 +322,7 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
                         .addComponent(FamilyHisText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(SurgeryHisText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MedicalRecordPanelLayout.createSequentialGroup()
-                            .addComponent(NameFld2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MedicalRecordIdFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(PatientCodeFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
@@ -356,7 +359,7 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
                     .addComponent(BirthDateText1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameFld2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(MedicalRecordIdFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                     .addComponent(PatientCodeFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                     .addComponent(PatientNameFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
@@ -431,11 +434,10 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
         InsertMedicalRecord();
-        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(null);
     }//GEN-LAST:event_SaveBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
-        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(null);
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().searchPatientPanel);
         MainDAO.Singleton.INSTANCE.getMain().registerNewMedicalRecordPanel = new RegisterNewMedicalRecordPanel();
     }//GEN-LAST:event_CancelBtnActionPerformed
 
@@ -457,10 +459,10 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
     private javax.swing.JLabel HealthInfoText1;
     private javax.swing.JTextField HeightFld;
     private javax.swing.JLabel HeightText1;
+    private javax.swing.JTextField MedicalRecordIdFld;
     private javax.swing.JPanel MedicalRecordPanel;
     private javax.swing.JLabel MedicationText1;
     private javax.swing.JTextPane MedicationsFld;
-    private javax.swing.JTextField NameFld2;
     private javax.swing.JLabel NameText1;
     private javax.swing.JScrollPane ObsPanel;
     private javax.swing.JScrollPane ObsPanel1;
@@ -485,12 +487,31 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
     private javax.swing.JLabel WeightText1;
     // End of variables declaration//GEN-END:variables
 
-    public void SetData(PatientDTO patient)
+    public void SetData()
     {
+        PatientDTO patient = SettingsDAO.Singleton.INSTANCE.getPatient();
+        
         Integer id = patient.getId();
         
         PatientCodeFld.setText(id.toString());
         PatientNameFld.setText(patient.getName());
+        
+        MedicalRecordDTO medicalRecord = SettingsDAO.Singleton.INSTANCE.getMedicalRecord();
+        
+        if (medicalRecord == null) return;
+        
+        MedicalRecordIdFld.setText(Integer.toString(medicalRecord.getId()));
+        AllergiesFld.setText(medicalRecord.getAllergies());
+        BloodTypeFld.setText(medicalRecord.getBloodType());
+        DiseasesFld.setText(medicalRecord.getDiseases());
+        DiseasesHistoryFld.setText(medicalRecord.getDiseasesHistory());
+        FamilyHistoryFld.setText(medicalRecord.getFamilyHistory());
+        HeightFld.setText(String.valueOf(medicalRecord.getHeight()));
+        MedicationsFld.setText(medicalRecord.getMedications());
+        ObservationsFld.setText(medicalRecord.getObservations());
+        StatusFld.setText(medicalRecord.getStatus());
+        SurgeryHistoryFld.setText(medicalRecord.getSurgeryHistory());
+        WeightFld.setText(String.valueOf(medicalRecord.getWeight()));
     }
     
     private void InsertMedicalRecord()
@@ -510,13 +531,26 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
         medicalRecord.setSurgeryHistory(SurgeryHistoryFld.getText());
         medicalRecord.setWeight(Double.parseDouble(WeightFld.getText()));
         
+        MedicalRecordDAO medicalRecordDAO = new MedicalRecordDAO();
+        
+        if (SettingsDAO.Singleton.INSTANCE.getMedicalRecord() != null)
+        {
+            boolean success = medicalRecordDAO.Update(medicalRecord);
+                
+            if (!success) JOptionPane.showMessageDialog(null, "Error: Não foi possível atualizar o prontuário.");
+            
+            SetData();
+            
+            return;
+        }
+        
         try 
         {
-            MedicalRecordDAO medicalRecordDAO = new MedicalRecordDAO();
-            boolean sucess = medicalRecordDAO.Insert(medicalRecord);
+            boolean success = medicalRecordDAO.Insert(medicalRecord);
             
-            if (!sucess) JOptionPane.showMessageDialog(null, "Error: Não foi possível inserir o prontuário.");
+            if (!success) JOptionPane.showMessageDialog(null, "Error: Não foi possível inserir o prontuário.");
             
+            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(null);
         } 
         catch (HeadlessException ex) 
         {

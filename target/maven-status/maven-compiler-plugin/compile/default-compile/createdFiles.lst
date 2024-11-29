@@ -1,6 +1,8 @@
 view\panel\appointment\NewAppointmentPanel$1.class
+view\panel\patient\PatientInfoPanel$2.class
 view\view_Login$1.class
 view\view_Register$3.class
+controller\ProfessionalDAO.class
 controller\AttachmentDAO.class
 model\ExamDTO.class
 view\PredefinedTextsPanel$4$1.class
@@ -52,8 +54,10 @@ view\panel\sidebar\MainSideBarPanel$3.class
 view\panel\sidebar\ServiceSideBarPanel$4.class
 view\panel\prescription\NewExamPanel$5.class
 view\panel\prescription\PrescriptionsPanel$2.class
+view\view_Register$15.class
 view\panel\prescription\NewExamPanel$6.class
 view\panel\sidebar\MainSideBarPanel$2.class
+view\view_Register$14.class
 view\panel\sidebar\ServiceSideBarPanel$3.class
 view\view_Login.class
 view\panel\prescription\NewRecipePanel$4.class
@@ -85,6 +89,7 @@ view\PredefinedTextsPanel$2.class
 view\view_Login$5.class
 view\view_Main$3.class
 view\panel\prescription\NewRecipePanel$2.class
+model\ProfessionalDTO.class
 controller\MainDAO.class
 view\panel\patient\RegisterNewPatientPanel$4.class
 view\panel\attachment\AttachmentsPanel$2.class
