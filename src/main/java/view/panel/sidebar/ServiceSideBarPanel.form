@@ -11,229 +11,235 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-128,0,0,0,-26"/>
   </AuxValues>
 
-  <Layout>
-    <DimensionLayout dim="0">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ClinicalEvolutionBtn" alignment="1" max="32767" attributes="0"/>
-                  <Component id="AttachmentsBtn" alignment="1" max="32767" attributes="0"/>
-                  <Component id="PrescriptionBtn" alignment="1" max="32767" attributes="0"/>
-                  <Component id="newAppointmentBtn" alignment="1" pref="218" max="32767" attributes="0"/>
-                  <Component id="PatientInfoBtn" alignment="1" max="32767" attributes="0"/>
-                  <Component id="MedicalRecordBtn" alignment="0" max="32767" attributes="0"/>
-                  <Component id="ServiceBtn" alignment="0" max="32767" attributes="0"/>
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="Background">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="Center"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="PatientInfoBtn" max="32767" attributes="0"/>
+              <Component id="MedicalRecordBtn" max="32767" attributes="0"/>
+              <Component id="ServiceBtn" alignment="0" max="32767" attributes="0"/>
+              <Component id="newAppointmentBtn" alignment="0" pref="230" max="32767" attributes="0"/>
+              <Component id="PrescriptionBtn" alignment="0" max="32767" attributes="0"/>
+              <Component id="AttachmentsBtn" alignment="0" max="32767" attributes="0"/>
+              <Component id="ClinicalEvolutionBtn" alignment="1" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="PatientInfoBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Component id="MedicalRecordBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Component id="ServiceBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Component id="newAppointmentBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Component id="PrescriptionBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Component id="AttachmentsBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Component id="ClinicalEvolutionBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="248" max="32767" attributes="0"/>
               </Group>
           </Group>
-      </Group>
-    </DimensionLayout>
-    <DimensionLayout dim="1">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="PatientInfoBtn" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="MedicalRecordBtn" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="ServiceBtn" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="newAppointmentBtn" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="PrescriptionBtn" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="AttachmentsBtn" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="ClinicalEvolutionBtn" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace pref="248" max="32767" attributes="0"/>
-          </Group>
-      </Group>
-    </DimensionLayout>
-  </Layout>
-  <SubComponents>
-    <Component class="javax.swing.JButton" name="MedicalRecordBtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="14" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Prontu&#xe1;rio"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Hand Cursor"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MedicalRecordBtnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="ServiceBtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="14" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Atendimento"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Hand Cursor"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ServiceBtnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="newAppointmentBtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="14" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Agendar consulta"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Hand Cursor"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newAppointmentBtnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="PrescriptionBtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="14" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Prescri&#xe7;&#xf5;es"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Hand Cursor"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrescriptionBtnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="AttachmentsBtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="14" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Anexos"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Hand Cursor"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AttachmentsBtnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="ClinicalEvolutionBtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="14" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Evolu&#xe7;&#xe3;o Cl&#xed;nica"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Hand Cursor"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClinicalEvolutionBtnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="PatientInfoBtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="14" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Paciente"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
-          </Border>
-        </Property>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Hand Cursor"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PatientInfoBtnActionPerformed"/>
-      </Events>
-    </Component>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="PatientInfoBtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Paciente"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PatientInfoBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="MedicalRecordBtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Prontu&#xe1;rio"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MedicalRecordBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="ServiceBtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Atendimento"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ServiceBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="newAppointmentBtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Agendar consulta"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newAppointmentBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="PrescriptionBtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Prescri&#xe7;&#xf5;es"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrescriptionBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="AttachmentsBtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Anexos"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AttachmentsBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="ClinicalEvolutionBtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Evolu&#xe7;&#xe3;o Cl&#xed;nica"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClinicalEvolutionBtnActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

@@ -11,9 +11,9 @@ import javax.swing.JTextPane;
 import model.PredefinedTextDTO;
 import view.PredefinedTextsPanel;
 
-public class NewrReferralPanel extends javax.swing.JPanel 
+public class NewReferralPanel extends javax.swing.JPanel 
 {
-    public NewrReferralPanel() 
+    public NewReferralPanel() 
     {
         initComponents();
     }

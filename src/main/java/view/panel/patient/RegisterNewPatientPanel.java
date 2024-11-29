@@ -1,6 +1,13 @@
 package view.panel.patient;
 
 import controller.MainDAO;
+import controller.PatientDAO;
+import java.awt.HeadlessException;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+import model.PatientDTO;
 
 public class RegisterNewPatientPanel extends javax.swing.JPanel 
 {
@@ -67,137 +74,139 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
         CancelBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
 
+        setLayout(new java.awt.BorderLayout());
+
         Background.setBackground(new java.awt.Color(255, 255, 255));
 
-        PersonalInfoText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        PersonalInfoText.setForeground(new java.awt.Color(0, 0, 102));
         PersonalInfoText.setText("INFORMAÇÕES PESSOAIS");
         PersonalInfoText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        PersonalInfoText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        PersonalInfoText.setForeground(new java.awt.Color(0, 0, 102));
 
-        NameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        NameText.setForeground(new java.awt.Color(0, 0, 102));
         NameText.setText("Nome de registro *");
         NameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        NameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        NameText.setForeground(new java.awt.Color(0, 0, 102));
 
-        SocialNameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        SocialNameText.setForeground(new java.awt.Color(0, 0, 102));
         SocialNameText.setText("Nome social");
         SocialNameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        SocialNameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        SocialNameText.setForeground(new java.awt.Color(0, 0, 102));
 
-        BirthDateText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        BirthDateText.setForeground(new java.awt.Color(0, 0, 102));
         BirthDateText.setText("Data de nascimento * (somente números)");
         BirthDateText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        BirthDateText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BirthDateText.setForeground(new java.awt.Color(0, 0, 102));
 
-        NationalityText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        NationalityText.setForeground(new java.awt.Color(0, 0, 102));
         NationalityText.setText("Nacionalidade *");
         NationalityText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        NationalityText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        NationalityText.setForeground(new java.awt.Color(0, 0, 102));
 
-        NaturalnessText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        NaturalnessText.setForeground(new java.awt.Color(0, 0, 102));
         NaturalnessText.setText("Naturalidade");
         NaturalnessText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        NaturalnessText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        NaturalnessText.setForeground(new java.awt.Color(0, 0, 102));
 
-        RaceText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        RaceText.setForeground(new java.awt.Color(0, 0, 102));
         RaceText.setText("Raça");
         RaceText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        RaceText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        RaceText.setForeground(new java.awt.Color(0, 0, 102));
 
-        SexText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        SexText.setForeground(new java.awt.Color(0, 0, 102));
         SexText.setText("Sexo *");
         SexText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        SexText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        SexText.setForeground(new java.awt.Color(0, 0, 102));
 
-        PatientIdText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        PatientIdText.setForeground(new java.awt.Color(0, 0, 102));
         PatientIdText.setText("Código do paciente");
         PatientIdText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        PatientIdText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        PatientIdText.setForeground(new java.awt.Color(0, 0, 102));
 
-        CpfText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        CpfText.setForeground(new java.awt.Color(0, 0, 102));
         CpfText.setText("CPF (somente números)");
         CpfText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        CpfText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        CpfText.setForeground(new java.awt.Color(0, 0, 102));
 
-        MotherText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        MotherText.setForeground(new java.awt.Color(0, 0, 102));
         MotherText.setText("Mãe *");
         MotherText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        MotherText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        MotherText.setForeground(new java.awt.Color(0, 0, 102));
 
-        FatherText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        FatherText.setForeground(new java.awt.Color(0, 0, 102));
         FatherText.setText("Pai");
         FatherText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        FatherText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        FatherText.setForeground(new java.awt.Color(0, 0, 102));
 
-        GuardianText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        GuardianText.setForeground(new java.awt.Color(0, 0, 102));
         GuardianText.setText("Responsável legal");
         GuardianText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        GuardianText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        GuardianText.setForeground(new java.awt.Color(0, 0, 102));
 
-        Phone1Text.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Phone1Text.setForeground(new java.awt.Color(0, 0, 102));
         Phone1Text.setText("Telefone 1 *");
         Phone1Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Phone1Text.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Phone1Text.setForeground(new java.awt.Color(0, 0, 102));
 
-        Phone2Text.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Phone2Text.setForeground(new java.awt.Color(0, 0, 102));
         Phone2Text.setText("Telefone 2");
         Phone2Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Phone2Text.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Phone2Text.setForeground(new java.awt.Color(0, 0, 102));
 
-        EmailText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        EmailText.setForeground(new java.awt.Color(0, 0, 102));
         EmailText.setText("E-mail");
         EmailText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        EmailText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        EmailText.setForeground(new java.awt.Color(0, 0, 102));
 
-        EmContactText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        EmContactText.setForeground(new java.awt.Color(0, 0, 102));
         EmContactText.setText("Contato de emergência");
         EmContactText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        EmContactText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        EmContactText.setForeground(new java.awt.Color(0, 0, 102));
 
-        EmNameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        EmNameText.setForeground(new java.awt.Color(0, 0, 102));
         EmNameText.setText("Nome do contato");
         EmNameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        EmNameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        EmNameText.setForeground(new java.awt.Color(0, 0, 102));
 
-        EmRelationText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        EmRelationText.setForeground(new java.awt.Color(0, 0, 102));
         EmRelationText.setText("Relação");
         EmRelationText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        EmRelationText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        EmRelationText.setForeground(new java.awt.Color(0, 0, 102));
 
-        AdressText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        AdressText.setForeground(new java.awt.Color(0, 0, 102));
         AdressText.setText("Endereço completo");
         AdressText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        AdressText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        AdressText.setForeground(new java.awt.Color(0, 0, 102));
 
-        HealthPlanText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        HealthPlanText.setForeground(new java.awt.Color(0, 0, 102));
         HealthPlanText.setText("INFORMAÇÕES DE PLANO DE SAÚDE");
         HealthPlanText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        HealthPlanText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        HealthPlanText.setForeground(new java.awt.Color(0, 0, 102));
 
-        CnsText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        CnsText.setForeground(new java.awt.Color(0, 0, 102));
         CnsText.setText("CNS");
         CnsText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        CnsText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        CnsText.setForeground(new java.awt.Color(0, 0, 102));
 
-        PlanNameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        PlanNameText.setForeground(new java.awt.Color(0, 0, 102));
         PlanNameText.setText("Plano de saúde");
         PlanNameText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        PlanNameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        PlanNameText.setForeground(new java.awt.Color(0, 0, 102));
 
-        PlanNumberText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        PlanNumberText.setForeground(new java.awt.Color(0, 0, 102));
         PlanNumberText.setText("Número");
         PlanNumberText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        PlanNumberText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        PlanNumberText.setForeground(new java.awt.Color(0, 0, 102));
 
-        AdditionalDataText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        AdditionalDataText.setForeground(new java.awt.Color(0, 0, 102));
         AdditionalDataText.setText("DADOS ADICIONAIS");
         AdditionalDataText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        AdditionalDataText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        AdditionalDataText.setForeground(new java.awt.Color(0, 0, 102));
 
-        ObsText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        ObsText.setForeground(new java.awt.Color(0, 0, 102));
         ObsText.setText("Observações");
         ObsText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        ObsText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        ObsText.setForeground(new java.awt.Color(0, 0, 102));
 
         NameFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         NameFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -206,13 +215,13 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
         SocialNameFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         SocialNameFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        BirthDateFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         try {
             BirthDateFld.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         BirthDateFld.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        BirthDateFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         BirthDateFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         BirthDateFld.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -227,14 +236,14 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
         NaturalnessFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         NaturalnessFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        RaceFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         RaceFld.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Branca", "Preta", "Parda", "Amarela", "Indígena", "Outro" }));
         RaceFld.setBorder(null);
+        RaceFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         RaceFld.setLightWeightPopupEnabled(false);
 
-        SexFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         SexFld.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Masculino", "Feminino", "Outro" }));
         SexFld.setBorder(null);
+        SexFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         SexFld.setLightWeightPopupEnabled(false);
 
         PatientIdFld.setEditable(false);
@@ -242,13 +251,13 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
         PatientIdFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PatientIdFld.setFocusable(false);
 
-        CpfFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         try {
             CpfFld.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         CpfFld.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CpfFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CpfFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         CpfFld.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -335,7 +344,7 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
         BackgroundLayout.setHorizontalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -404,7 +413,7 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BackgroundLayout.createSequentialGroup()
                             .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(CnsFld)
-                                .addComponent(CnsText, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                                .addComponent(CnsText, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(PlanNameText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -419,7 +428,7 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
                             .addComponent(SaveBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addComponent(ObsPanel, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(AdressText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 47, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,8 +443,8 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(SocialNameFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NameFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(SocialNameFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                        .addComponent(NameFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                     .addComponent(BirthDateFld))
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,8 +454,8 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NaturalnessFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NationalityFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NaturalnessFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(NationalityFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                             .addComponent(RaceFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)))
                     .addComponent(NationalityText))
                 .addGap(18, 18, 18)
@@ -462,8 +471,8 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
                     .addComponent(CpfText)
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(CpfFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(CpfFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(MotherText)
@@ -472,9 +481,9 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FatherFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MotherFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(GuardianFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(FatherFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(MotherFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(GuardianFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Phone1Text)
@@ -483,9 +492,9 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
                         .addComponent(Phone2Text)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Phone2Fld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EmailFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Phone1Fld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Phone2Fld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(EmailFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(Phone1Fld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(EmContactText)
@@ -494,52 +503,43 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
                         .addComponent(EmRelationText, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EmNameFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EmRelationFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EmContactFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EmNameFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(EmRelationFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(EmContactFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(AdressText, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(AdressFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AdressText)
+                .addGap(7, 7, 7)
+                .addComponent(AdressFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                 .addGap(47, 47, 47)
                 .addComponent(HealthPlanText)
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addComponent(CnsText, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CnsText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CnsFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CnsFld, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addComponent(PlanNameText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PlanNameFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(PlanNameFld, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addComponent(PlanNumberText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PlanNumberFld, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(PlanNumberFld, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)))
                 .addGap(47, 47, 47)
                 .addComponent(AdditionalDataText)
                 .addGap(18, 18, 18)
                 .addComponent(ObsText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ObsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ObsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                 .addGap(47, 47, 47)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(SaveBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(CancelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        add(Background, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BirthDateFldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BirthDateFldFocusGained
@@ -556,7 +556,8 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
     }//GEN-LAST:event_CancelBtnActionPerformed
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
-        
+        InsertPatient();
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(null);
     }//GEN-LAST:event_SaveBtnActionPerformed
 
 
@@ -616,4 +617,62 @@ public class RegisterNewPatientPanel extends javax.swing.JPanel
     private javax.swing.JLabel SocialNameText;
     // End of variables declaration//GEN-END:variables
 
+    private void InsertPatient()
+    {
+        String name = NameFld.getText();
+        String socialName = SocialNameFld.getText();
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate birthDate = LocalDate.parse(BirthDateFld.getText(), formatter);
+        
+        String cpf = CpfFld.getText();
+        String nationality = NationalityFld.getText();
+        String naturalness = NaturalnessFld.getText();
+        String race = RaceFld.getSelectedItem().toString();
+        String sex = SexFld.getSelectedItem().toString();
+        String mother = MotherFld.getText();
+        String father = FatherFld.getText();
+        String guardian = GuardianFld.getText();
+        String phone1 = Phone1Fld.getText();
+        String phone2 = Phone2Fld.getText();
+        String email = EmailFld.getText();
+        String emContact = EmContactFld.getText();
+        String emName = EmNameFld.getText();
+        String emRelation = EmRelationFld.getText();
+        String address = AdressFld.getText();
+
+        PatientDTO patient = new PatientDTO();
+        patient.setName(name);
+        patient.setSocialName(socialName);
+        patient.setBirthDate(birthDate);
+        patient.setCpf(cpf);
+        patient.setNationality(nationality);
+        patient.setNaturalness(naturalness);
+        patient.setRace(race);
+        patient.setSex(sex);
+        patient.setMother(mother);
+        patient.setFather(father);
+        patient.setGuardian(guardian);
+        patient.setPhone1(phone1);
+        patient.setPhone2(phone2);
+        patient.setEmail(email);
+        patient.setEmergencyPhone(emContact);
+        patient.setEmergencyName(emName);
+        patient.setEmergencyRelation(emRelation);
+        patient.setAdress(address);
+        
+        try 
+        {
+            PatientDAO patientDAO = new PatientDAO();
+            boolean sucess = patientDAO.Insert(patient);
+            
+            if (!sucess) JOptionPane.showMessageDialog(null, "Error: Não foi possível inserir o paciente.");
+            
+        } 
+        catch (HeadlessException ex) 
+        {
+            System.out.println("Error (RegisterNewPatientPanel): " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error: Não foi possível inserir o paciente.");
+        }
+    }
 }

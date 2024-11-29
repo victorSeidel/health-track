@@ -3,30 +3,14 @@ package view.panel.service;
 import controller.MainDAO;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.HeadlessException;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
 import controller.AttachmentDAO;
 import model.AttachmentDTO;
-import org.apache.commons.io.FilenameUtils;
 import view.panel.sidebar.ServiceSideBarPanel;
 
 public class ServicesListPanel extends javax.swing.JPanel 
@@ -47,6 +31,8 @@ public class ServicesListPanel extends javax.swing.JPanel
         TableScrollPanel = new javax.swing.JScrollPane();
         ServicesTable = new javax.swing.JTable();
         StartServiceBtn = new javax.swing.JButton();
+
+        setLayout(new java.awt.BorderLayout());
 
         ShowAppointmentsPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -112,12 +98,12 @@ public class ServicesListPanel extends javax.swing.JPanel
         ShowAppointmentsPanelLayout.setHorizontalGroup(
             ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AttachmentsText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TableScrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
-                    .addComponent(StartServiceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(StartServiceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
         ShowAppointmentsPanelLayout.setVerticalGroup(
             ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,30 +111,13 @@ public class ServicesListPanel extends javax.swing.JPanel
                 .addGap(30, 30, 30)
                 .addComponent(AttachmentsText)
                 .addGap(18, 18, 18)
-                .addComponent(TableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TableScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(StartServiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1050, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(ShowAppointmentsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 636, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(ShowAppointmentsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(ShowAppointmentsPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartServiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartServiceBtnActionPerformed

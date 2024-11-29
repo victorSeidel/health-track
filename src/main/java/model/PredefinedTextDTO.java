@@ -1,9 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class PredefinedTextDTO 
 {
     private int id;

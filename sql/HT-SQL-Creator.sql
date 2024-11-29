@@ -3,7 +3,43 @@ USE HealthTrackDB;
 
 CREATE TABLE Patient (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
+    name VARCHAR(50) NOT NULL,
+    socialName VARCHAR(50) NOT NULL,
+	birthDate DATE NOT NULL,
+    nationality VARCHAR(50) NOT NULL,
+    naturalness VARCHAR(50),
+    race VARCHAR(10),
+    sex VARCHAR(10) NOT NULL,
+    cpf VARCHAR(15),
+    mother VARCHAR(50) NOT NULL,
+    father VARCHAR(50),
+    guardian VARCHAR(50),
+    phone1 VARCHAR(20) NOT NULL,
+    phone2 VARCHAR(20),
+    email VARCHAR(50),
+    emergencyPhone VARCHAR(20),
+    emergencyName VARCHAR(50),
+    emergencyRelation VARCHAR(15),
+    adress VARCHAR(100) NOT NULL,
+    status VARCHAR(15)
+);
+
+CREATE TABLE MedicalRecord (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	patientId INT NOT NULL,
+    bloodType VARCHAR(10),
+    weight DOUBLE,
+	height DOUBLE,
+    allergies VARCHAR(255),
+    medications VARCHAR(255),
+	diseases VARCHAR(255),
+	diseasesHistory VARCHAR(255),
+	familyHistory VARCHAR(255),
+	surgeryHistory VARCHAR(255),
+	observations VARCHAR(255),
+	status VARCHAR(15),
+    
+	FOREIGN KEY (patientId) REFERENCES Patient(id) ON DELETE CASCADE
 );
 
 CREATE TABLE Professional (
@@ -35,7 +71,7 @@ CREATE TABLE Appointment (
 	paymentMethod VARCHAR(20) NOT NULL,
     additionalData VARCHAR(255) NOT NULL,
     
-	FOREIGN KEY (patientId) REFERENCES Patient(id) ON DELETE CASCADE,
+	/*FOREIGN KEY (patientId) REFERENCES Patient(id) ON DELETE CASCADE,*/
 	FOREIGN KEY (professionalId) REFERENCES Professional(id) ON DELETE CASCADE,
 	FOREIGN KEY (schedulerId) REFERENCES Professional(id) ON DELETE SET NULL
 );
@@ -54,15 +90,16 @@ CREATE TABLE Service (
 
 CREATE TABLE Exam (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    serviceId INT NOT NULL,
-    patientId INT NOT NULL,
-    professionalId INT NOT NULL,
+    serviceId INT,
+    patientId INT,
+    professionalId INT,
     description VARCHAR(255) NOT NULL,
     reason VARCHAR(150) NOT NULL,
+	date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
     
-	FOREIGN KEY (serviceId) REFERENCES Service(id) ON DELETE CASCADE,
+	/*FOREIGN KEY (serviceId) REFERENCES Service(id) ON DELETE CASCADE,
 	FOREIGN KEY (patientId) REFERENCES Patient(id) ON DELETE CASCADE,
-	FOREIGN KEY (professionalId) REFERENCES Professional(id) ON DELETE CASCADE
+	FOREIGN KEY (professionalId) REFERENCES Professional(id) ON DELETE CASCADE*/
 );
 
 CREATE TABLE Recipe (
@@ -71,10 +108,11 @@ CREATE TABLE Recipe (
     patientId INT NOT NULL,
     professionalId INT NOT NULL,
     description VARCHAR(255) NOT NULL,
+	date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
     
-	FOREIGN KEY (serviceId) REFERENCES Service(id) ON DELETE CASCADE,
+	/*FOREIGN KEY (serviceId) REFERENCES Service(id) ON DELETE CASCADE,
 	FOREIGN KEY (patientId) REFERENCES Patient(id) ON DELETE CASCADE,
-	FOREIGN KEY (professionalId) REFERENCES Professional(id) ON DELETE CASCADE
+	FOREIGN KEY (professionalId) REFERENCES Professional(id) ON DELETE CASCADE*/
 );
 
 CREATE TABLE Referral (
@@ -84,10 +122,11 @@ CREATE TABLE Referral (
     professionalId INT NOT NULL,
     description VARCHAR(255) NOT NULL,
     reason VARCHAR(150) NOT NULL,
+	date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
     
-	FOREIGN KEY (serviceId) REFERENCES Service(id) ON DELETE CASCADE,
+	/*FOREIGN KEY (serviceId) REFERENCES Service(id) ON DELETE CASCADE,
 	FOREIGN KEY (patientId) REFERENCES Patient(id) ON DELETE CASCADE,
-	FOREIGN KEY (professionalId) REFERENCES Professional(id) ON DELETE CASCADE
+	FOREIGN KEY (professionalId) REFERENCES Professional(id) ON DELETE CASCADE*/
 );
 
 /* 	
@@ -101,3 +140,5 @@ CREATE TABLE PredefinedText (
     type INT NOT NULL,		
     text VARCHAR(255) NOT NULL
 );
+
+SELECT * FROM PredefinedText;

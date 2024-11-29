@@ -17,52 +17,16 @@ public class MainSideBarPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ServiceListBtn = new javax.swing.JButton();
-        ShowScheduleBtn = new javax.swing.JButton();
-        NewAppointmentBtn = new javax.swing.JButton();
+        Background = new javax.swing.JPanel();
         SearchPatientBtn = new javax.swing.JButton();
         RegisterNewPatientBtn = new javax.swing.JButton();
         SearchMedicalRecordBtn = new javax.swing.JButton();
         NewMedicalRecordBtn = new javax.swing.JButton();
+        ServiceListBtn = new javax.swing.JButton();
+        ShowScheduleBtn = new javax.swing.JButton();
+        NewAppointmentBtn = new javax.swing.JButton();
 
-        ServiceListBtn.setBackground(new java.awt.Color(0, 0, 102));
-        ServiceListBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        ServiceListBtn.setForeground(new java.awt.Color(255, 255, 255));
-        ServiceListBtn.setText("Lista de atendimentos");
-        ServiceListBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ServiceListBtn.setBorderPainted(false);
-        ServiceListBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ServiceListBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ServiceListBtnActionPerformed(evt);
-            }
-        });
-
-        ShowScheduleBtn.setBackground(new java.awt.Color(0, 0, 102));
-        ShowScheduleBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        ShowScheduleBtn.setForeground(new java.awt.Color(255, 255, 255));
-        ShowScheduleBtn.setText("Visualizar agenda");
-        ShowScheduleBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ShowScheduleBtn.setBorderPainted(false);
-        ShowScheduleBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ShowScheduleBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowScheduleBtnActionPerformed(evt);
-            }
-        });
-
-        NewAppointmentBtn.setBackground(new java.awt.Color(0, 0, 102));
-        NewAppointmentBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        NewAppointmentBtn.setForeground(new java.awt.Color(255, 255, 255));
-        NewAppointmentBtn.setText("Agendar nova consulta");
-        NewAppointmentBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        NewAppointmentBtn.setBorderPainted(false);
-        NewAppointmentBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        NewAppointmentBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NewAppointmentBtnActionPerformed(evt);
-            }
-        });
+        setLayout(new java.awt.BorderLayout());
 
         SearchPatientBtn.setBackground(new java.awt.Color(0, 0, 102));
         SearchPatientBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -116,41 +80,77 @@ public class MainSideBarPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SearchMedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(ServiceListBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(ShowScheduleBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(NewAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(RegisterNewPatientBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(NewMedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(SearchPatientBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
+        ServiceListBtn.setBackground(new java.awt.Color(0, 0, 102));
+        ServiceListBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        ServiceListBtn.setForeground(new java.awt.Color(255, 255, 255));
+        ServiceListBtn.setText("Lista de atendimentos");
+        ServiceListBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ServiceListBtn.setBorderPainted(false);
+        ServiceListBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ServiceListBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ServiceListBtnActionPerformed(evt);
+            }
+        });
+
+        ShowScheduleBtn.setBackground(new java.awt.Color(0, 0, 102));
+        ShowScheduleBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        ShowScheduleBtn.setForeground(new java.awt.Color(255, 255, 255));
+        ShowScheduleBtn.setText("Visualizar agenda");
+        ShowScheduleBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ShowScheduleBtn.setBorderPainted(false);
+        ShowScheduleBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ShowScheduleBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowScheduleBtnActionPerformed(evt);
+            }
+        });
+
+        NewAppointmentBtn.setBackground(new java.awt.Color(0, 0, 102));
+        NewAppointmentBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        NewAppointmentBtn.setForeground(new java.awt.Color(255, 255, 255));
+        NewAppointmentBtn.setText("Agendar nova consulta");
+        NewAppointmentBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        NewAppointmentBtn.setBorderPainted(false);
+        NewAppointmentBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        NewAppointmentBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewAppointmentBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
+        Background.setLayout(BackgroundLayout);
+        BackgroundLayout.setHorizontalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(SearchPatientBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(RegisterNewPatientBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+            .addComponent(SearchMedicalRecordBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(NewMedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ServiceListBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ShowScheduleBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(NewAppointmentBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
+        BackgroundLayout.setVerticalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundLayout.createSequentialGroup()
                 .addComponent(SearchPatientBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(RegisterNewPatientBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SearchMedicalRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
+                .addComponent(SearchMedicalRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
                 .addComponent(NewMedicalRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(ServiceListBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(ShowScheduleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(NewAppointmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addGap(0, 249, Short.MAX_VALUE))
         );
+
+        add(Background, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ServiceListBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceListBtnActionPerformed
@@ -207,6 +207,7 @@ public class MainSideBarPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Background;
     private javax.swing.JButton NewAppointmentBtn;
     private javax.swing.JButton NewMedicalRecordBtn;
     private javax.swing.JButton RegisterNewPatientBtn;

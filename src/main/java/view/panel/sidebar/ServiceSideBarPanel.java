@@ -20,13 +20,29 @@ public class ServiceSideBarPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Background = new javax.swing.JPanel();
+        PatientInfoBtn = new javax.swing.JButton();
         MedicalRecordBtn = new javax.swing.JButton();
         ServiceBtn = new javax.swing.JButton();
         newAppointmentBtn = new javax.swing.JButton();
         PrescriptionBtn = new javax.swing.JButton();
         AttachmentsBtn = new javax.swing.JButton();
         ClinicalEvolutionBtn = new javax.swing.JButton();
-        PatientInfoBtn = new javax.swing.JButton();
+
+        setLayout(new java.awt.BorderLayout());
+
+        PatientInfoBtn.setBackground(new java.awt.Color(0, 0, 102));
+        PatientInfoBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        PatientInfoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        PatientInfoBtn.setText("Paciente");
+        PatientInfoBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PatientInfoBtn.setBorderPainted(false);
+        PatientInfoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PatientInfoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PatientInfoBtnActionPerformed(evt);
+            }
+        });
 
         MedicalRecordBtn.setBackground(new java.awt.Color(0, 0, 102));
         MedicalRecordBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -106,53 +122,38 @@ public class ServiceSideBarPanel extends javax.swing.JPanel {
             }
         });
 
-        PatientInfoBtn.setBackground(new java.awt.Color(0, 0, 102));
-        PatientInfoBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        PatientInfoBtn.setForeground(new java.awt.Color(255, 255, 255));
-        PatientInfoBtn.setText("Paciente");
-        PatientInfoBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        PatientInfoBtn.setBorderPainted(false);
-        PatientInfoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        PatientInfoBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PatientInfoBtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AttachmentsBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PrescriptionBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(newAppointmentBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                    .addComponent(PatientInfoBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(MedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ServiceBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
+        Background.setLayout(BackgroundLayout);
+        BackgroundLayout.setHorizontalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PatientInfoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MedicalRecordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ServiceBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(newAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+            .addComponent(PrescriptionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(AttachmentsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
+        BackgroundLayout.setVerticalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundLayout.createSequentialGroup()
                 .addComponent(PatientInfoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(MedicalRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(ServiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(newAppointmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(PrescriptionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(AttachmentsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(ClinicalEvolutionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addGap(0, 248, Short.MAX_VALUE))
         );
+
+        add(Background, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void MedicalRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicalRecordBtnActionPerformed
@@ -183,12 +184,8 @@ public class ServiceSideBarPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_newAppointmentBtnActionPerformed
 
     private void PrescriptionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrescriptionBtnActionPerformed
-        if (SettingsDAO.Singleton.INSTANCE.isStartNewPanel())
-        {
-            PrescriptionsPanel newPrescriptionsPanel = new PrescriptionsPanel();
-            MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newPrescriptionsPanel);
-        }
-        else MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(MainDAO.Singleton.INSTANCE.getMain().prescriptionsPanel);
+        PrescriptionsPanel newPrescriptionsPanel = new PrescriptionsPanel();
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newPrescriptionsPanel);
     }//GEN-LAST:event_PrescriptionBtnActionPerformed
 
     private void AttachmentsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttachmentsBtnActionPerformed
@@ -221,6 +218,7 @@ public class ServiceSideBarPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AttachmentsBtn;
+    private javax.swing.JPanel Background;
     private javax.swing.JButton ClinicalEvolutionBtn;
     private javax.swing.JButton MedicalRecordBtn;
     private javax.swing.JButton PatientInfoBtn;

@@ -48,6 +48,8 @@ public class AttachmentsPanel extends javax.swing.JPanel
         DeleteAttachmentBtn = new javax.swing.JButton();
         ShowAttachmentBtn = new javax.swing.JButton();
 
+        setLayout(new java.awt.BorderLayout());
+
         ShowAppointmentsPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         AttachmentsText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -138,17 +140,17 @@ public class AttachmentsPanel extends javax.swing.JPanel
         ShowAppointmentsPanelLayout.setHorizontalGroup(
             ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AttachmentsText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TableScrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShowAppointmentsPanelLayout.createSequentialGroup()
-                        .addComponent(NewAttachmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(DeleteAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ShowAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                        .addComponent(DeleteAttachmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NewAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ShowAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(47, 47, 47))
         );
         ShowAppointmentsPanelLayout.setVerticalGroup(
             ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,33 +158,18 @@ public class AttachmentsPanel extends javax.swing.JPanel
                 .addGap(47, 47, 47)
                 .addComponent(AttachmentsText)
                 .addGap(18, 18, 18)
-                .addComponent(TableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NewAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ShowAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(ShowAttachmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DeleteAttachmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(NewAttachmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1050, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(ShowAppointmentsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(ShowAppointmentsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(ShowAppointmentsPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void NewAttachmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewAttachmentBtnActionPerformed
@@ -216,27 +203,7 @@ public class AttachmentsPanel extends javax.swing.JPanel
     }//GEN-LAST:event_ShowAttachmentBtnActionPerformed
 
     private void DeleteAttachmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAttachmentBtnActionPerformed
-        int selectedRow = AttachmentsTable.getSelectedRow();
-        
-        if (selectedRow == -1)
-        {
-            JOptionPane.showMessageDialog(null, "Selecione um anexo.");
-            return;
-        }
-        
-        if (JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir esse anexo?") != JOptionPane.YES_OPTION) return;
-        
-        int id = (int) AttachmentsTable.getValueAt(selectedRow, 0);
-        
-        AttachmentDAO attachmentDAO = new AttachmentDAO();
-        
-        if (!attachmentDAO.Delete(id))
-        {
-            JOptionPane.showMessageDialog(null, "Erro ao excluir anexo.");
-            return;
-        }
-        
-        UpdateTable();
+        DeleteFile();
     }//GEN-LAST:event_DeleteAttachmentBtnActionPerformed
 
 
@@ -349,6 +316,31 @@ public class AttachmentsPanel extends javax.swing.JPanel
         {
             JOptionPane.showMessageDialog(null, "Error: Não foi possível carregar a imagem.");
         }
+    }
+    
+    private void DeleteFile()
+    {
+        int selectedRow = AttachmentsTable.getSelectedRow();
+        
+        if (selectedRow == -1)
+        {
+            JOptionPane.showMessageDialog(null, "Selecione um anexo.");
+            return;
+        }
+        
+        if (JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir esse anexo?", "Excluir anexo", JOptionPane.YES_NO_CANCEL_OPTION) != JOptionPane.YES_OPTION) return;
+        
+        int id = (int) AttachmentsTable.getValueAt(selectedRow, 0);
+        
+        AttachmentDAO attachmentDAO = new AttachmentDAO();
+        
+        if (!attachmentDAO.Delete(id))
+        {
+            JOptionPane.showMessageDialog(null, "Erro ao excluir anexo.");
+            return;
+        }
+        
+        UpdateTable();
     }
     
     private void SetTable()

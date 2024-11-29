@@ -1,5 +1,6 @@
 package view.panel.prescription;
 
+import controller.ExamDAO;
 import controller.MainDAO;
 import controller.PredefinedTextDAO;
 import java.awt.event.ActionEvent;
@@ -8,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextPane;
+import model.ExamDTO;
 import model.PredefinedTextDTO;
 import view.PredefinedTextsPanel;
 
@@ -33,7 +35,7 @@ public class NewExamPanel extends javax.swing.JPanel
         AllergiesText2 = new javax.swing.JLabel();
         DescriptionPanel = new javax.swing.JScrollPane();
         DescriptionFld = new javax.swing.JTextPane();
-        UpdateHistoryBtn6 = new javax.swing.JButton();
+        FinishBtn = new javax.swing.JButton();
         CancelBtn = new javax.swing.JButton();
         AddDescTextBtn = new javax.swing.JButton();
         SetDescTextBtn = new javax.swing.JButton();
@@ -92,13 +94,18 @@ public class NewExamPanel extends javax.swing.JPanel
         DescriptionFld.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         DescriptionPanel.setViewportView(DescriptionFld);
 
-        UpdateHistoryBtn6.setBackground(new java.awt.Color(0, 0, 102));
-        UpdateHistoryBtn6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        UpdateHistoryBtn6.setForeground(new java.awt.Color(255, 255, 255));
-        UpdateHistoryBtn6.setText("Finalizar e imprimir");
-        UpdateHistoryBtn6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        UpdateHistoryBtn6.setBorderPainted(false);
-        UpdateHistoryBtn6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        FinishBtn.setBackground(new java.awt.Color(0, 0, 102));
+        FinishBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        FinishBtn.setForeground(new java.awt.Color(255, 255, 255));
+        FinishBtn.setText("Finalizar e imprimir");
+        FinishBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        FinishBtn.setBorderPainted(false);
+        FinishBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        FinishBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FinishBtnActionPerformed(evt);
+            }
+        });
 
         CancelBtn.setBackground(new java.awt.Color(204, 0, 0));
         CancelBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -198,7 +205,7 @@ public class NewExamPanel extends javax.swing.JPanel
                         .addGroup(ServicePanelLayout.createSequentialGroup()
                             .addComponent(CancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(UpdateHistoryBtn6, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))
+                            .addComponent(FinishBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))
                         .addComponent(PersonalInfoText3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(ServicePanelLayout.createSequentialGroup()
                             .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -256,7 +263,7 @@ public class NewExamPanel extends javax.swing.JPanel
                         .addComponent(SetReasonTextBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UpdateHistoryBtn6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FinishBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(115, Short.MAX_VALUE))
         );
@@ -299,6 +306,10 @@ public class NewExamPanel extends javax.swing.JPanel
         AddText(ReasonFld, 12);
     }//GEN-LAST:event_AddReasonTextBtnActionPerformed
 
+    private void FinishBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinishBtnActionPerformed
+        Insert();
+    }//GEN-LAST:event_FinishBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddDescTextBtn;
@@ -310,6 +321,7 @@ public class NewExamPanel extends javax.swing.JPanel
     private javax.swing.JButton CancelBtn;
     private javax.swing.JTextPane DescriptionFld;
     private javax.swing.JScrollPane DescriptionPanel;
+    private javax.swing.JButton FinishBtn;
     private javax.swing.JLabel NameFld2;
     private javax.swing.JLabel NameText2;
     private javax.swing.JLabel PersonalInfoText3;
@@ -320,7 +332,6 @@ public class NewExamPanel extends javax.swing.JPanel
     private javax.swing.JButton SetReasonTextBtn;
     private javax.swing.JLabel SocialNameFld2;
     private javax.swing.JLabel SocialNameText2;
-    private javax.swing.JButton UpdateHistoryBtn6;
     // End of variables declaration//GEN-END:variables
 
     private JButton button;
@@ -368,7 +379,7 @@ public class NewExamPanel extends javax.swing.JPanel
         
         if (!predefinedTextDAO.Insert(predefinedText))
         {
-            System.out.println("Error: Não foi possível inserir o texto!");
+            JOptionPane.showMessageDialog(null,"Error: Não foi possível inserir o texto!");
             return;
         } 
         
@@ -378,5 +389,23 @@ public class NewExamPanel extends javax.swing.JPanel
     private void Cancel()
     {
         MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(null);
+    }
+    
+    private void Insert()
+    {
+        ExamDTO exam    = new ExamDTO();
+        ExamDAO examDAO = new ExamDAO();
+
+        exam.setDescription(DescriptionFld.getText());
+        exam.setReason(ReasonFld.getText());
+        exam.setProfessionalId(1);
+
+        if (!examDAO.Insert(exam)) 
+        {
+            JOptionPane.showMessageDialog(null, "Error: Não foi possível criar o exame!");
+        } 
+        
+        DescriptionFld.setText("");
+        ReasonFld.setText("");
     }
 }

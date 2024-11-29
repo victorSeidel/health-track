@@ -1,12 +1,17 @@
 package view.panel.prescription;
 
+import controller.ExamDAO;
 import controller.MainDAO;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
+import model.ExamDTO;
 
 public class PrescriptionsPanel extends javax.swing.JPanel 
 {
@@ -14,24 +19,9 @@ public class PrescriptionsPanel extends javax.swing.JPanel
     {
         initComponents();
         
-        JTableHeader tableHeader[] = {ExamsTable.getTableHeader(), RecipesTable.getTableHeader(), ReferralsTable.getTableHeader(), CertificatesTable.getTableHeader()};
+        SetTable();
         
-        TableColumnModel columnModel[] = {ExamsTable.getColumnModel(), RecipesTable.getColumnModel(), ReferralsTable.getColumnModel(), CertificatesTable.getColumnModel()};
-        
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        DefaultTableCellRenderer headerRenderer[] = {
-            (DefaultTableCellRenderer) ExamsTable.getTableHeader().getDefaultRenderer(), (DefaultTableCellRenderer) RecipesTable.getTableHeader().getDefaultRenderer(),
-            (DefaultTableCellRenderer) ReferralsTable.getTableHeader().getDefaultRenderer(), (DefaultTableCellRenderer) CertificatesTable.getTableHeader().getDefaultRenderer()};
-        
-        for (int i = 0; i < 4; i++)
-        {
-           tableHeader[i].setForeground(Color.black);
-           tableHeader[i].setFont(new Font("Arial", Font.BOLD, 16));
-
-           centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-           columnModel[i].getColumn(1).setCellRenderer(centerRenderer);
-           headerRenderer[i].setHorizontalAlignment(SwingConstants.CENTER);   
-        }
+        UpdateExamTable();
     }
 
     @SuppressWarnings("unchecked")
@@ -43,9 +33,7 @@ public class PrescriptionsPanel extends javax.swing.JPanel
         ExamsText = new javax.swing.JLabel();
         ExamsPanel = new javax.swing.JScrollPane();
         ExamsTable = new javax.swing.JTable();
-        NewExamBtn = new javax.swing.JButton();
         DeleteExamBtn = new javax.swing.JButton();
-        ShowExamBtn = new javax.swing.JButton();
         RecipesText = new javax.swing.JLabel();
         RecipesPanel = new javax.swing.JScrollPane();
         RecipesTable = new javax.swing.JTable();
@@ -68,6 +56,10 @@ public class PrescriptionsPanel extends javax.swing.JPanel
         DeleteExamBtn3 = new javax.swing.JButton();
         NewRecipeBtn2 = new javax.swing.JButton();
         ShowExamBtn3 = new javax.swing.JButton();
+        NewExamBtn = new javax.swing.JButton();
+        ShowExamBtn4 = new javax.swing.JButton();
+
+        setLayout(new java.awt.BorderLayout());
 
         ShowAppointmentsPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -86,7 +78,7 @@ public class PrescriptionsPanel extends javax.swing.JPanel
         ExamsTable.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         ExamsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "Raio X", null, "08/11/2024 12:57"}
+                {null, null, null, null}
             },
             new String [] {
                 "ID", "Descrição", "Profissional", "Data"
@@ -114,25 +106,11 @@ public class PrescriptionsPanel extends javax.swing.JPanel
             ExamsTable.getColumnModel().getColumn(0).setMaxWidth(0);
             ExamsTable.getColumnModel().getColumn(1).setMinWidth(400);
             ExamsTable.getColumnModel().getColumn(1).setPreferredWidth(400);
-            ExamsTable.getColumnModel().getColumn(1).setMaxWidth(0);
             ExamsTable.getColumnModel().getColumn(2).setMinWidth(300);
             ExamsTable.getColumnModel().getColumn(2).setPreferredWidth(300);
             ExamsTable.getColumnModel().getColumn(3).setMinWidth(150);
             ExamsTable.getColumnModel().getColumn(3).setPreferredWidth(150);
         }
-
-        NewExamBtn.setBackground(new java.awt.Color(0, 0, 102));
-        NewExamBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        NewExamBtn.setForeground(new java.awt.Color(255, 255, 255));
-        NewExamBtn.setText("Novo exame");
-        NewExamBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        NewExamBtn.setBorderPainted(false);
-        NewExamBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        NewExamBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NewExamBtnActionPerformed(evt);
-            }
-        });
 
         DeleteExamBtn.setBackground(new java.awt.Color(204, 0, 0));
         DeleteExamBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -141,14 +119,11 @@ public class PrescriptionsPanel extends javax.swing.JPanel
         DeleteExamBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         DeleteExamBtn.setBorderPainted(false);
         DeleteExamBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        ShowExamBtn.setBackground(new java.awt.Color(0, 0, 102));
-        ShowExamBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        ShowExamBtn.setForeground(new java.awt.Color(255, 255, 255));
-        ShowExamBtn.setText("Visualizar exame");
-        ShowExamBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ShowExamBtn.setBorderPainted(false);
-        ShowExamBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DeleteExamBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteExamBtnActionPerformed(evt);
+            }
+        });
 
         RecipesText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         RecipesText.setForeground(new java.awt.Color(0, 0, 102));
@@ -159,14 +134,14 @@ public class PrescriptionsPanel extends javax.swing.JPanel
         RecipesTable.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         RecipesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Dipirona", "08/11/2024 13:03"}
+
             },
             new String [] {
-                "Descrição", "Data"
+                "ID", "Descrição", "Profissional", "Data"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -182,9 +157,12 @@ public class PrescriptionsPanel extends javax.swing.JPanel
         RecipesTable.setShowGrid(true);
         RecipesPanel.setViewportView(RecipesTable);
         if (RecipesTable.getColumnModel().getColumnCount() > 0) {
-            RecipesTable.getColumnModel().getColumn(0).setMinWidth(750);
-            RecipesTable.getColumnModel().getColumn(0).setPreferredWidth(750);
-            RecipesTable.getColumnModel().getColumn(0).setMaxWidth(750);
+            RecipesTable.getColumnModel().getColumn(0).setMinWidth(0);
+            RecipesTable.getColumnModel().getColumn(0).setPreferredWidth(0);
+            RecipesTable.getColumnModel().getColumn(0).setMaxWidth(0);
+            RecipesTable.getColumnModel().getColumn(1).setMinWidth(750);
+            RecipesTable.getColumnModel().getColumn(1).setPreferredWidth(750);
+            RecipesTable.getColumnModel().getColumn(1).setMaxWidth(750);
         }
 
         ReferralsText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -366,59 +344,77 @@ public class PrescriptionsPanel extends javax.swing.JPanel
         ShowExamBtn3.setBorderPainted(false);
         ShowExamBtn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        NewExamBtn.setBackground(new java.awt.Color(0, 0, 102));
+        NewExamBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        NewExamBtn.setForeground(new java.awt.Color(255, 255, 255));
+        NewExamBtn.setText("Novo pedido de exame");
+        NewExamBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        NewExamBtn.setBorderPainted(false);
+        NewExamBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        NewExamBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewExamBtnActionPerformed(evt);
+            }
+        });
+
+        ShowExamBtn4.setBackground(new java.awt.Color(0, 0, 102));
+        ShowExamBtn4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        ShowExamBtn4.setForeground(new java.awt.Color(255, 255, 255));
+        ShowExamBtn4.setText("Visualizar exame");
+        ShowExamBtn4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ShowExamBtn4.setBorderPainted(false);
+        ShowExamBtn4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         javax.swing.GroupLayout ShowAppointmentsPanelLayout = new javax.swing.GroupLayout(ShowAppointmentsPanel);
         ShowAppointmentsPanel.setLayout(ShowAppointmentsPanelLayout);
         ShowAppointmentsPanelLayout.setHorizontalGroup(
             ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
                 .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                        .addContainerGap(47, Short.MAX_VALUE)
-                        .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                                .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(SocialNameText2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(SocialNameFld2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(BirthDateText2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BirthDateFld2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(CertificatesPanel)
-                                .addComponent(CertificatesText, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ReferralsPanel)
-                                .addComponent(ReferralsText, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ExamsText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ExamsPanel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(RecipesPanel)
-                                .addComponent(RecipesText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                                    .addComponent(DeleteExamBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(13, 13, 13)
-                                    .addComponent(NewRecipeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(ShowExamBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShowAppointmentsPanelLayout.createSequentialGroup()
-                                    .addComponent(DeleteExamBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(13, 13, 13)
-                                    .addComponent(NewReferralBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(ShowExamBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShowAppointmentsPanelLayout.createSequentialGroup()
-                                    .addComponent(DeleteExamBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(13, 13, 13)
-                                    .addComponent(NewRecipeBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(ShowExamBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(DeleteExamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addComponent(NewExamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ShowExamBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                        .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SocialNameText2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SocialNameFld2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BirthDateText2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BirthDateFld2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)))
+                    .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(CertificatesPanel)
+                        .addComponent(CertificatesText, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ReferralsPanel)
+                        .addComponent(ReferralsText, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ExamsText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ExamsPanel, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(RecipesPanel)
+                        .addComponent(RecipesText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
+                            .addComponent(DeleteExamBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(13, 13, 13)
+                            .addComponent(NewRecipeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(ShowExamBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShowAppointmentsPanelLayout.createSequentialGroup()
+                            .addComponent(DeleteExamBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(13, 13, 13)
+                            .addComponent(NewReferralBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(ShowExamBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShowAppointmentsPanelLayout.createSequentialGroup()
+                            .addComponent(DeleteExamBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(13, 13, 13)
+                            .addComponent(NewRecipeBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(ShowExamBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(ShowAppointmentsPanelLayout.createSequentialGroup()
+                            .addComponent(DeleteExamBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(13, 13, 13)
+                            .addComponent(NewExamBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(ShowExamBtn4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(47, 47, 47))
         );
         ShowAppointmentsPanelLayout.setVerticalGroup(
             ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -439,61 +435,41 @@ public class PrescriptionsPanel extends javax.swing.JPanel
                 .addComponent(ExamsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NewExamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ShowExamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteExamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NewExamBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(ShowExamBtn4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(DeleteExamBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addComponent(RecipesText)
                 .addGap(18, 18, 18)
                 .addComponent(RecipesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NewRecipeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ShowExamBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteExamBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NewRecipeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(ShowExamBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(DeleteExamBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addComponent(ReferralsText)
                 .addGap(18, 18, 18)
                 .addComponent(ReferralsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NewReferralBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ShowExamBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteExamBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NewReferralBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(ShowExamBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(DeleteExamBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addComponent(CertificatesText)
                 .addGap(18, 18, 18)
                 .addComponent(CertificatesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(ShowAppointmentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NewRecipeBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ShowExamBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteExamBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NewRecipeBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(ShowExamBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(DeleteExamBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(47, 47, 47))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1015, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(ShowAppointmentsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1968, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(ShowAppointmentsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(ShowAppointmentsPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void NewExamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewExamBtnActionPerformed
-        NewExamPanel newExamPanel = new NewExamPanel();
-        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newExamPanel);
-    }//GEN-LAST:event_NewExamBtnActionPerformed
 
     private void NewRecipeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewRecipeBtnActionPerformed
         NewRecipePanel newRecipePanel = new NewRecipePanel();
@@ -501,13 +477,22 @@ public class PrescriptionsPanel extends javax.swing.JPanel
     }//GEN-LAST:event_NewRecipeBtnActionPerformed
 
     private void NewReferralBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewReferralBtnActionPerformed
-        NewrReferralPanel newrReferralPanel = new NewrReferralPanel();
+        NewReferralPanel newrReferralPanel = new NewReferralPanel();
         MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newrReferralPanel);
     }//GEN-LAST:event_NewReferralBtnActionPerformed
 
     private void NewRecipeBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewRecipeBtn2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NewRecipeBtn2ActionPerformed
+
+    private void NewExamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewExamBtnActionPerformed
+        NewExamPanel newExamPanel = new NewExamPanel();
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(newExamPanel);
+    }//GEN-LAST:event_NewExamBtnActionPerformed
+
+    private void DeleteExamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteExamBtnActionPerformed
+        DeleteExam();
+    }//GEN-LAST:event_DeleteExamBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -534,12 +519,79 @@ public class PrescriptionsPanel extends javax.swing.JPanel
     private javax.swing.JTable ReferralsTable;
     private javax.swing.JLabel ReferralsText;
     private javax.swing.JPanel ShowAppointmentsPanel;
-    private javax.swing.JButton ShowExamBtn;
     private javax.swing.JButton ShowExamBtn1;
     private javax.swing.JButton ShowExamBtn2;
     private javax.swing.JButton ShowExamBtn3;
+    private javax.swing.JButton ShowExamBtn4;
     private javax.swing.JLabel SocialNameFld2;
     private javax.swing.JLabel SocialNameText2;
     private javax.swing.JLabel Title;
     // End of variables declaration//GEN-END:variables
+
+    private void SetTable()
+    {
+        JTableHeader tableHeader[] = {ExamsTable.getTableHeader(), RecipesTable.getTableHeader(), ReferralsTable.getTableHeader(), CertificatesTable.getTableHeader()};
+        
+        TableColumnModel columnModel[] = {ExamsTable.getColumnModel(), RecipesTable.getColumnModel(), ReferralsTable.getColumnModel(), CertificatesTable.getColumnModel()};
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        DefaultTableCellRenderer headerRenderer[] = {
+            (DefaultTableCellRenderer) ExamsTable.getTableHeader().getDefaultRenderer(), (DefaultTableCellRenderer) RecipesTable.getTableHeader().getDefaultRenderer(),
+            (DefaultTableCellRenderer) ReferralsTable.getTableHeader().getDefaultRenderer(), (DefaultTableCellRenderer) CertificatesTable.getTableHeader().getDefaultRenderer()};
+        
+        for (int i = 0; i < 4; i++)
+        {
+           tableHeader[i].setForeground(Color.black);
+           tableHeader[i].setFont(new Font("Arial", Font.BOLD, 16));
+
+           centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+           columnModel[i].getColumn(1).setCellRenderer(centerRenderer);
+           headerRenderer[i].setHorizontalAlignment(SwingConstants.CENTER);   
+        }
+    }
+    
+    private void UpdateExamTable()
+    {
+        ExamDAO examDAO          = new ExamDAO();
+        ArrayList<ExamDTO> exams = examDAO.List();
+
+        DefaultTableModel tableModel = (DefaultTableModel) ExamsTable.getModel();
+        tableModel.setRowCount(0);
+
+        for (ExamDTO exam : exams) 
+        {
+            Object[] row = new Object[] 
+            {
+                exam.getId(),
+                exam.getDescription(),
+                exam.getProfessionalId(),
+                exam.getFormattedDate(),
+            };
+            
+            tableModel.addRow(row);
+        }
+    }
+    
+    private void DeleteExam()
+    {
+        if (ExamsTable.getSelectedRow() == -1)
+        {
+            JOptionPane.showMessageDialog(null, "Selecione um exame.");
+            return;
+        }
+        
+        if (JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir esse exame?", "Excluir exame", JOptionPane.YES_NO_CANCEL_OPTION) != JOptionPane.YES_OPTION) return;
+        
+        ExamDAO examDAO = new ExamDAO();
+        
+        String id = ExamsTable.getValueAt(ExamsTable.getSelectedRow(), 0).toString();
+        
+        if (!examDAO.Delete((Integer.parseInt(id))))
+        {
+            JOptionPane.showMessageDialog(null, "Error: Não foi possível excluir o exame.");
+            return;
+        }
+      
+        UpdateExamTable();
+    }
 }

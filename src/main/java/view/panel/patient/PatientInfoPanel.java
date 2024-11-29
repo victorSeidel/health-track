@@ -1,6 +1,8 @@
 package view.panel.patient;
 
 import controller.MainDAO;
+import controller.SettingsDAO;
+import model.PatientDTO;
 
 public class PatientInfoPanel extends javax.swing.JPanel 
 {
@@ -87,6 +89,8 @@ public class PatientInfoPanel extends javax.swing.JPanel
         DeleteRegisterBtn = new javax.swing.JButton();
         EditDataBtn = new javax.swing.JButton();
         UpdateHistoryBtn2 = new javax.swing.JButton();
+
+        setLayout(new java.awt.BorderLayout());
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -450,11 +454,14 @@ public class PatientInfoPanel extends javax.swing.JPanel
         BackgroundLayout.setHorizontalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addComponent(AdditionalDataText, javax.swing.GroupLayout.PREFERRED_SIZE, 936, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(BackgroundLayout.createSequentialGroup()
                                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -536,30 +543,24 @@ public class PatientInfoPanel extends javax.swing.JPanel
                                             .addComponent(EmailFld, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                                             .addComponent(EmRelationText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(EmRelationFld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(BackgroundLayout.createSequentialGroup()
-                                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(BackgroundLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(ForMoreInfoText, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(BackgroundLayout.createSequentialGroup()
-                                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(AllergiesPanel)
-                                            .addComponent(AllergiesText, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
-                                        .addGap(18, 18, Short.MAX_VALUE)
-                                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(MedicationText, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                            .addComponent(MedicationPanel))))
-                                .addGap(18, 18, 18)
-                                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(DiseasesText, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DiseasesPanel))))
-                        .addContainerGap(47, Short.MAX_VALUE))
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addComponent(AdditionalDataText, javax.swing.GroupLayout.PREFERRED_SIZE, 936, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(BackgroundLayout.createSequentialGroup()
+                                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(BackgroundLayout.createSequentialGroup()
+                                            .addGap(0, 0, Short.MAX_VALUE)
+                                            .addComponent(ForMoreInfoText, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(BackgroundLayout.createSequentialGroup()
+                                            .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(AllergiesPanel)
+                                                .addComponent(AllergiesText, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(MedicationText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(MedicationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(DiseasesText, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(DiseasesPanel))))
                             .addComponent(GoToMedicalRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(HealthPlanText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -593,7 +594,7 @@ public class PatientInfoPanel extends javax.swing.JPanel
                                             .addComponent(StatusFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(StatusText, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(DeleteRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addContainerGap(47, Short.MAX_VALUE))))
+                        .addGap(47, 47, 47))))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -746,19 +747,10 @@ public class PatientInfoPanel extends javax.swing.JPanel
                     .addComponent(DeleteRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EditDataBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UpdateHistoryBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        add(Background, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void GoToMedicalRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToMedicalRecordBtnActionPerformed
@@ -842,4 +834,29 @@ public class PatientInfoPanel extends javax.swing.JPanel
     private javax.swing.JLabel WeightFld;
     private javax.swing.JLabel WeightText;
     // End of variables declaration//GEN-END:variables
+
+    public void SetData()
+    {
+        PatientDTO patient = SettingsDAO.Singleton.INSTANCE.getPatient();
+                
+        PatientIdFld.setText(String.valueOf(patient.getId()));
+        NameFld.setText(patient.getName());
+        SocialNameFld.setText(patient.getSocialName());
+        BirthDateFld.setText(patient.getFormattedBirthDate());
+        CpfFld.setText(patient.getCpf());
+        NationalityFld.setText(patient.getNationality());
+        NaturalnessFld.setText(patient.getNaturalness());
+        RaceFld.setText(patient.getRace());
+        SexFld.setText(patient.getSex());
+        MotherFld.setText(patient.getMother());
+        FatherFld.setText(patient.getFather());
+        GuardianFld.setText(patient.getGuardian());
+        Phone1Fld.setText(patient.getPhone1());
+        Phone2Fld.setText(patient.getPhone2());
+        EmailFld.setText(patient.getEmail());
+        EmContactFld.setText(patient.getEmergencyPhone());
+        EmNameFld.setText(patient.getEmergencyName());
+        EmRelationFld.setText(patient.getEmergencyRelation());
+        AdressFld.setText(patient.getAdress());
+    }
 }

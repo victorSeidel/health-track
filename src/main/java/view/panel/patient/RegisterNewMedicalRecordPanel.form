@@ -47,11 +47,11 @@
                   <EmptySpace pref="47" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="NameFld5" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="BloodTypeFld" min="-2" pref="300" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="NameFld6" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="WeightFld" min="-2" pref="300" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="NameFld7" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="HeightFld" min="-2" pref="300" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" attributes="0">
@@ -60,7 +60,6 @@
                               <Component id="SaveBtn" max="32767" attributes="0"/>
                           </Group>
                           <Component id="AdditionalDataText1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="ObsText2" alignment="0" min="-2" pref="331" max="-2" attributes="0"/>
                           <Component id="DiseasesHisText1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="DiseasesText1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="MedicationText1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
@@ -87,17 +86,30 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="NameFld2" min="-2" pref="300" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="NameFld3" min="-2" pref="300" max="-2" attributes="0"/>
+                              <Component id="PatientCodeFld" min="-2" pref="300" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="NameFld4" max="32767" attributes="0"/>
+                              <Component id="PatientNameFld" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="ObsPanel" alignment="0" max="32767" attributes="0"/>
                           <Component id="ObsPanel1" alignment="1" max="32767" attributes="0"/>
                           <Component id="ObsPanel9" alignment="0" max="32767" attributes="0"/>
                           <Component id="ObsPanel10" alignment="0" max="32767" attributes="0"/>
                           <Component id="ObsPanel11" alignment="0" max="32767" attributes="0"/>
                           <Component id="ObsPanel12" alignment="0" max="32767" attributes="0"/>
                           <Component id="ObsPanel13" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="ObsText2" min="-2" pref="331" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="ObsPanel" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ObsText3" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="StatusFld" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace pref="47" max="32767" attributes="0"/>
@@ -120,8 +132,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="NameFld2" alignment="3" pref="50" max="32767" attributes="0"/>
-                      <Component id="NameFld3" alignment="3" pref="50" max="32767" attributes="0"/>
-                      <Component id="NameFld4" alignment="3" pref="50" max="32767" attributes="0"/>
+                      <Component id="PatientCodeFld" alignment="3" pref="50" max="32767" attributes="0"/>
+                      <Component id="PatientNameFld" alignment="3" pref="50" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="HealthInfoText1" min="-2" max="-2" attributes="0"/>
@@ -133,9 +145,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NameFld5" alignment="3" pref="50" max="32767" attributes="0"/>
-                      <Component id="NameFld6" alignment="3" pref="50" max="32767" attributes="0"/>
-                      <Component id="NameFld7" alignment="3" pref="50" max="32767" attributes="0"/>
+                      <Component id="BloodTypeFld" alignment="3" pref="50" max="32767" attributes="0"/>
+                      <Component id="WeightFld" alignment="3" pref="50" max="32767" attributes="0"/>
+                      <Component id="HeightFld" alignment="3" pref="50" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="AllergiesText1" min="-2" max="-2" attributes="0"/>
@@ -161,12 +173,18 @@
                   <Component id="FamilyHisText1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="ObsPanel1" pref="65" max="32767" attributes="0"/>
-                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="AdditionalDataText1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="ObsText2" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="ObsText2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ObsText3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="ObsPanel" pref="65" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="ObsPanel" pref="65" max="32767" attributes="0"/>
+                      <Component id="StatusFld" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="SaveBtn" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
@@ -385,10 +403,16 @@
         </Component>
         <Component class="javax.swing.JButton" name="CancelBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cancelar"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="cc" type="rgb"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cancelar"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
@@ -397,12 +421,6 @@
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -411,10 +429,16 @@
         </Component>
         <Component class="javax.swing.JButton" name="SaveBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Salvar"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="0" red="0" type="rgb"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Salvar"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
@@ -423,12 +447,6 @@
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -446,12 +464,13 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="[2, 2, 2, 10]"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NameFld3">
+        <Component class="javax.swing.JTextField" name="PatientCodeFld">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -462,12 +481,13 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="[2, 2, 2, 10]"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NameFld4">
+        <Component class="javax.swing.JTextField" name="PatientNameFld">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -478,12 +498,13 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="[2, 2, 2, 10]"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NameFld5">
+        <Component class="javax.swing.JTextField" name="BloodTypeFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -498,7 +519,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NameFld6">
+        <Component class="javax.swing.JTextField" name="WeightFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -513,7 +534,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NameFld7">
+        <Component class="javax.swing.JTextField" name="HeightFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -546,7 +567,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld">
+            <Component class="javax.swing.JTextPane" name="ObservationsFld">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -581,7 +602,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld1">
+            <Component class="javax.swing.JTextPane" name="FamilyHistoryFld">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -616,7 +637,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld9">
+            <Component class="javax.swing.JTextPane" name="SurgeryHistoryFld">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -651,7 +672,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld10">
+            <Component class="javax.swing.JTextPane" name="DiseasesHistoryFld">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -686,7 +707,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld11">
+            <Component class="javax.swing.JTextPane" name="DiseasesFld">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -721,7 +742,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld12">
+            <Component class="javax.swing.JTextPane" name="MedicationsFld">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -756,7 +777,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld13">
+            <Component class="javax.swing.JTextPane" name="AllergiesFld">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -773,6 +794,34 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="ObsText3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Status"/>
+            <Property name="verticalAlignment" type="int" value="1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="StatusFld">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ativo"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+              <Insets value="[2, 2, 2, 10]"/>
+            </Property>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

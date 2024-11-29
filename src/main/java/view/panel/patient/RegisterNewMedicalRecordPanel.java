@@ -1,6 +1,11 @@
 package view.panel.patient;
 
 import controller.MainDAO;
+import controller.MedicalRecordDAO;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
+import model.MedicalRecordDTO;
+import model.PatientDTO;
 
 public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel 
 {
@@ -34,25 +39,27 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
         CancelBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
         NameFld2 = new javax.swing.JTextField();
-        NameFld3 = new javax.swing.JTextField();
-        NameFld4 = new javax.swing.JTextField();
-        NameFld5 = new javax.swing.JTextField();
-        NameFld6 = new javax.swing.JTextField();
-        NameFld7 = new javax.swing.JTextField();
+        PatientCodeFld = new javax.swing.JTextField();
+        PatientNameFld = new javax.swing.JTextField();
+        BloodTypeFld = new javax.swing.JTextField();
+        WeightFld = new javax.swing.JTextField();
+        HeightFld = new javax.swing.JTextField();
         ObsPanel = new javax.swing.JScrollPane();
-        ObsFld = new javax.swing.JTextPane();
+        ObservationsFld = new javax.swing.JTextPane();
         ObsPanel1 = new javax.swing.JScrollPane();
-        ObsFld1 = new javax.swing.JTextPane();
+        FamilyHistoryFld = new javax.swing.JTextPane();
         ObsPanel9 = new javax.swing.JScrollPane();
-        ObsFld9 = new javax.swing.JTextPane();
+        SurgeryHistoryFld = new javax.swing.JTextPane();
         ObsPanel10 = new javax.swing.JScrollPane();
-        ObsFld10 = new javax.swing.JTextPane();
+        DiseasesHistoryFld = new javax.swing.JTextPane();
         ObsPanel11 = new javax.swing.JScrollPane();
-        ObsFld11 = new javax.swing.JTextPane();
+        DiseasesFld = new javax.swing.JTextPane();
         ObsPanel12 = new javax.swing.JScrollPane();
-        ObsFld12 = new javax.swing.JTextPane();
+        MedicationsFld = new javax.swing.JTextPane();
         ObsPanel13 = new javax.swing.JScrollPane();
-        ObsFld13 = new javax.swing.JTextPane();
+        AllergiesFld = new javax.swing.JTextPane();
+        ObsText3 = new javax.swing.JLabel();
+        StatusFld = new javax.swing.JTextField();
 
         MedicalRecordPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -171,92 +178,105 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
         NameFld2.setEditable(false);
         NameFld2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         NameFld2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        NameFld2.setFocusable(false);
         NameFld2.setMargin(new java.awt.Insets(2, 2, 2, 10));
 
-        NameFld3.setEditable(false);
-        NameFld3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        NameFld3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        NameFld3.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        PatientCodeFld.setEditable(false);
+        PatientCodeFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        PatientCodeFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PatientCodeFld.setFocusable(false);
+        PatientCodeFld.setMargin(new java.awt.Insets(2, 2, 2, 10));
 
-        NameFld4.setEditable(false);
-        NameFld4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        NameFld4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        NameFld4.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        PatientNameFld.setEditable(false);
+        PatientNameFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        PatientNameFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PatientNameFld.setFocusable(false);
+        PatientNameFld.setMargin(new java.awt.Insets(2, 2, 2, 10));
 
-        NameFld5.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        NameFld5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        NameFld5.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        BloodTypeFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        BloodTypeFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BloodTypeFld.setMargin(new java.awt.Insets(2, 2, 2, 10));
 
-        NameFld6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        NameFld6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        NameFld6.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        WeightFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        WeightFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        WeightFld.setMargin(new java.awt.Insets(2, 2, 2, 10));
 
-        NameFld7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        NameFld7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        NameFld7.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        HeightFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        HeightFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        HeightFld.setMargin(new java.awt.Insets(2, 2, 2, 10));
 
         ObsPanel.setBackground(new java.awt.Color(255, 255, 255));
         ObsPanel.setBorder(null);
         ObsPanel.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        ObsFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ObsFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        ObsPanel.setViewportView(ObsFld);
+        ObservationsFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ObservationsFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        ObservationsFld.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        ObsPanel.setViewportView(ObservationsFld);
 
         ObsPanel1.setBackground(new java.awt.Color(255, 255, 255));
         ObsPanel1.setBorder(null);
         ObsPanel1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        ObsFld1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ObsFld1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        ObsPanel1.setViewportView(ObsFld1);
+        FamilyHistoryFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        FamilyHistoryFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        FamilyHistoryFld.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        ObsPanel1.setViewportView(FamilyHistoryFld);
 
         ObsPanel9.setBackground(new java.awt.Color(255, 255, 255));
         ObsPanel9.setBorder(null);
         ObsPanel9.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        ObsFld9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ObsFld9.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld9.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        ObsPanel9.setViewportView(ObsFld9);
+        SurgeryHistoryFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SurgeryHistoryFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        SurgeryHistoryFld.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        ObsPanel9.setViewportView(SurgeryHistoryFld);
 
         ObsPanel10.setBackground(new java.awt.Color(255, 255, 255));
         ObsPanel10.setBorder(null);
         ObsPanel10.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        ObsFld10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ObsFld10.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld10.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        ObsPanel10.setViewportView(ObsFld10);
+        DiseasesHistoryFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DiseasesHistoryFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        DiseasesHistoryFld.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        ObsPanel10.setViewportView(DiseasesHistoryFld);
 
         ObsPanel11.setBackground(new java.awt.Color(255, 255, 255));
         ObsPanel11.setBorder(null);
         ObsPanel11.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        ObsFld11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ObsFld11.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld11.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        ObsPanel11.setViewportView(ObsFld11);
+        DiseasesFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DiseasesFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        DiseasesFld.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        ObsPanel11.setViewportView(DiseasesFld);
 
         ObsPanel12.setBackground(new java.awt.Color(255, 255, 255));
         ObsPanel12.setBorder(null);
         ObsPanel12.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        ObsFld12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ObsFld12.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld12.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        ObsPanel12.setViewportView(ObsFld12);
+        MedicationsFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        MedicationsFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        MedicationsFld.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        ObsPanel12.setViewportView(MedicationsFld);
 
         ObsPanel13.setBackground(new java.awt.Color(255, 255, 255));
         ObsPanel13.setBorder(null);
         ObsPanel13.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        ObsFld13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ObsFld13.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        ObsFld13.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        ObsPanel13.setViewportView(ObsFld13);
+        AllergiesFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AllergiesFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        AllergiesFld.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        ObsPanel13.setViewportView(AllergiesFld);
+
+        ObsText3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        ObsText3.setForeground(new java.awt.Color(0, 0, 102));
+        ObsText3.setText("Status");
+        ObsText3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        StatusFld.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        StatusFld.setText("Ativo");
+        StatusFld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        StatusFld.setMargin(new java.awt.Insets(2, 2, 2, 10));
 
         javax.swing.GroupLayout MedicalRecordPanelLayout = new javax.swing.GroupLayout(MedicalRecordPanel);
         MedicalRecordPanel.setLayout(MedicalRecordPanelLayout);
@@ -266,18 +286,17 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
                 .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MedicalRecordPanelLayout.createSequentialGroup()
-                        .addComponent(NameFld5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BloodTypeFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(NameFld6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(WeightFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(NameFld7, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(HeightFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(MedicalRecordPanelLayout.createSequentialGroup()
                             .addComponent(CancelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGap(18, 18, 18)
                             .addComponent(SaveBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addComponent(AdditionalDataText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ObsText2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(DiseasesHisText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(DiseasesText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(MedicationText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,16 +321,25 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MedicalRecordPanelLayout.createSequentialGroup()
                             .addComponent(NameFld2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(NameFld3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PatientCodeFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(NameFld4))
-                        .addComponent(ObsPanel, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PatientNameFld))
                         .addComponent(ObsPanel1)
                         .addComponent(ObsPanel9, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(ObsPanel10, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(ObsPanel11, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(ObsPanel12, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ObsPanel13, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(ObsPanel13, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MedicalRecordPanelLayout.createSequentialGroup()
+                            .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(MedicalRecordPanelLayout.createSequentialGroup()
+                                    .addComponent(ObsText2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(ObsPanel))
+                            .addGap(18, 18, 18)
+                            .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ObsText3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(StatusFld, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         MedicalRecordPanelLayout.setVerticalGroup(
@@ -329,8 +357,8 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NameFld2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(NameFld3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(NameFld4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                    .addComponent(PatientCodeFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(PatientNameFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addComponent(HealthInfoText1)
                 .addGap(18, 18, 18)
@@ -340,9 +368,9 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
                     .addComponent(BloodTypeText1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameFld5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(NameFld6, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(NameFld7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                    .addComponent(BloodTypeFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(WeightFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(HeightFld, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(AllergiesText1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -367,12 +395,16 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
                 .addComponent(FamilyHisText1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ObsPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addComponent(AdditionalDataText1)
                 .addGap(18, 18, 18)
-                .addComponent(ObsText2)
+                .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ObsText2)
+                    .addComponent(ObsText3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ObsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ObsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                    .addComponent(StatusFld))
                 .addGap(47, 47, 47)
                 .addGroup(MedicalRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -398,7 +430,8 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
     }// </editor-fold>//GEN-END:initComponents
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
-
+        InsertMedicalRecord();
+        MainDAO.Singleton.INSTANCE.getMain().SetScrollPanel(null);
     }//GEN-LAST:event_SaveBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
@@ -409,31 +442,26 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AdditionalDataText1;
+    private javax.swing.JTextPane AllergiesFld;
     private javax.swing.JLabel AllergiesText1;
     private javax.swing.JLabel BirthDateText1;
+    private javax.swing.JTextField BloodTypeFld;
     private javax.swing.JLabel BloodTypeText1;
     private javax.swing.JButton CancelBtn;
+    private javax.swing.JTextPane DiseasesFld;
     private javax.swing.JLabel DiseasesHisText1;
+    private javax.swing.JTextPane DiseasesHistoryFld;
     private javax.swing.JLabel DiseasesText1;
     private javax.swing.JLabel FamilyHisText1;
+    private javax.swing.JTextPane FamilyHistoryFld;
     private javax.swing.JLabel HealthInfoText1;
+    private javax.swing.JTextField HeightFld;
     private javax.swing.JLabel HeightText1;
     private javax.swing.JPanel MedicalRecordPanel;
     private javax.swing.JLabel MedicationText1;
+    private javax.swing.JTextPane MedicationsFld;
     private javax.swing.JTextField NameFld2;
-    private javax.swing.JTextField NameFld3;
-    private javax.swing.JTextField NameFld4;
-    private javax.swing.JTextField NameFld5;
-    private javax.swing.JTextField NameFld6;
-    private javax.swing.JTextField NameFld7;
     private javax.swing.JLabel NameText1;
-    private javax.swing.JTextPane ObsFld;
-    private javax.swing.JTextPane ObsFld1;
-    private javax.swing.JTextPane ObsFld10;
-    private javax.swing.JTextPane ObsFld11;
-    private javax.swing.JTextPane ObsFld12;
-    private javax.swing.JTextPane ObsFld13;
-    private javax.swing.JTextPane ObsFld9;
     private javax.swing.JScrollPane ObsPanel;
     private javax.swing.JScrollPane ObsPanel1;
     private javax.swing.JScrollPane ObsPanel10;
@@ -442,11 +470,58 @@ public class RegisterNewMedicalRecordPanel extends javax.swing.JPanel
     private javax.swing.JScrollPane ObsPanel13;
     private javax.swing.JScrollPane ObsPanel9;
     private javax.swing.JLabel ObsText2;
+    private javax.swing.JLabel ObsText3;
+    private javax.swing.JTextPane ObservationsFld;
+    private javax.swing.JTextField PatientCodeFld;
+    private javax.swing.JTextField PatientNameFld;
     private javax.swing.JLabel PersonalInfoText1;
     private javax.swing.JLabel PersonalInfoText2;
     private javax.swing.JButton SaveBtn;
     private javax.swing.JLabel SocialNameText1;
+    private javax.swing.JTextField StatusFld;
     private javax.swing.JLabel SurgeryHisText1;
+    private javax.swing.JTextPane SurgeryHistoryFld;
+    private javax.swing.JTextField WeightFld;
     private javax.swing.JLabel WeightText1;
     // End of variables declaration//GEN-END:variables
+
+    public void SetData(PatientDTO patient)
+    {
+        Integer id = patient.getId();
+        
+        PatientCodeFld.setText(id.toString());
+        PatientNameFld.setText(patient.getName());
+    }
+    
+    private void InsertMedicalRecord()
+    {
+        MedicalRecordDTO medicalRecord = new MedicalRecordDTO();
+        
+        medicalRecord.setAllergies(AllergiesFld.getText());
+        medicalRecord.setBloodType(BloodTypeFld.getText());
+        medicalRecord.setPatientId(Integer.parseInt(PatientCodeFld.getText()));
+        medicalRecord.setDiseases(DiseasesFld.getText());
+        medicalRecord.setDiseasesHistory(DiseasesHistoryFld.getText());
+        medicalRecord.setFamilyHistory(FamilyHistoryFld.getText());
+        medicalRecord.setHeight(Double.parseDouble(HeightFld.getText()));
+        medicalRecord.setMedications(MedicationsFld.getText());
+        medicalRecord.setObservations(ObservationsFld.getText());
+        medicalRecord.setStatus(StatusFld.getText());
+        medicalRecord.setSurgeryHistory(SurgeryHistoryFld.getText());
+        medicalRecord.setWeight(Double.parseDouble(WeightFld.getText()));
+        
+        try 
+        {
+            MedicalRecordDAO medicalRecordDAO = new MedicalRecordDAO();
+            boolean sucess = medicalRecordDAO.Insert(medicalRecord);
+            
+            if (!sucess) JOptionPane.showMessageDialog(null, "Error: Não foi possível inserir o prontuário.");
+            
+        } 
+        catch (HeadlessException ex) 
+        {
+            System.out.println("Error (RegisterNewMedicalRecord): " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error: Não foi possível inserir o prontuário.");
+        }
+    }
 }

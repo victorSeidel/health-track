@@ -44,7 +44,6 @@ public class view_Main extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Health Track");
-        setResizable(false);
 
         Background.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -113,15 +112,15 @@ public class view_Main extends javax.swing.JFrame
         SideBarPanel.setLayout(SideBarPanelLayout);
         SideBarPanelLayout.setHorizontalGroup(
             SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SideBarPanelLayout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(SideBarScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SideBarScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
         );
         SideBarPanelLayout.setVerticalGroup(
             SideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SideBarPanelLayout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addComponent(SideBarScrollPanel)
+                .addComponent(SideBarScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
                 .addGap(13, 13, 13))
         );
 
@@ -134,9 +133,9 @@ public class view_Main extends javax.swing.JFrame
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addComponent(SideBarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGap(13, 13, 13)
                 .addComponent(ScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1034, Short.MAX_VALUE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addGap(13, 13, 13))
             .addComponent(NavBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1310, Short.MAX_VALUE)
         );
         BackgroundLayout.setVerticalGroup(
@@ -146,21 +145,12 @@ public class view_Main extends javax.swing.JFrame
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SideBarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
                     .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addGap(13, 13, 13)
                         .addComponent(ScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
                         .addGap(13, 13, 13))))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(Background, java.awt.BorderLayout.CENTER);
 
         getAccessibleContext().setAccessibleName("Tela Inicial");
 

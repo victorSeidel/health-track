@@ -41,6 +41,8 @@ public class NewAppointmentPanel extends javax.swing.JPanel
         UpdateHistoryBtn7 = new javax.swing.JButton();
         UpdateHistoryBtn8 = new javax.swing.JButton();
 
+        setLayout(new java.awt.BorderLayout());
+
         ServicePanel.setBackground(new java.awt.Color(255, 255, 255));
 
         PersonalInfoText3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -188,48 +190,49 @@ public class NewAppointmentPanel extends javax.swing.JPanel
         ServicePanelLayout.setHorizontalGroup(
             ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ServicePanelLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(ObsPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ObsPanel16)
                         .addGroup(ServicePanelLayout.createSequentialGroup()
                             .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(AllergiesText2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AllergiesText2, javax.swing.GroupLayout.DEFAULT_SIZE, 941, Short.MAX_VALUE)
                                 .addGroup(ServicePanelLayout.createSequentialGroup()
                                     .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(BirthDateText2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(BirthDateFld2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(BirthDateFld2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
                                     .addGap(18, 18, 18)
                                     .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(BirthDateText3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(BirthDateFld3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(BirthDateFld3, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
                                     .addGap(18, 18, 18)
                                     .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(BirthDateText4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(BirthDateFld4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(BirthDateFld4, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)))
                                 .addComponent(PersonalInfoText3, javax.swing.GroupLayout.PREFERRED_SIZE, 936, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(ServicePanelLayout.createSequentialGroup()
-                                    .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(AllergiesText3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
                                     .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(AllergiesText6, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(ObsPanel17)))
-                                .addGroup(ServicePanelLayout.createSequentialGroup()
-                                    .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(AllergiesText4, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(AllergiesText4, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                                        .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(timePicker1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(AllergiesText5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ServicePanelLayout.createSequentialGroup()
-                                    .addComponent(UpdateHistoryBtn8, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+                                    .addComponent(UpdateHistoryBtn8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(UpdateHistoryBtn7, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)))
-                            .addGap(2, 2, 2)))
+                                    .addComponent(UpdateHistoryBtn7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGap(2, 2, 2))
+                        .addGroup(ServicePanelLayout.createSequentialGroup()
+                            .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(AllergiesText3, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(18, 18, 18)
+                            .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(AllergiesText6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ObsPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 0, Short.MAX_VALUE)))
                     .addGroup(ServicePanelLayout.createSequentialGroup()
                         .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(AllergiesText7, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
@@ -238,7 +241,7 @@ public class NewAppointmentPanel extends javax.swing.JPanel
                         .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ObsPanel18)
                             .addComponent(AllergiesText8, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
         ServicePanelLayout.setVerticalGroup(
             ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,7 +265,7 @@ public class NewAppointmentPanel extends javax.swing.JPanel
                 .addGap(18, 18, 18)
                 .addComponent(AllergiesText2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ObsPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ObsPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AllergiesText3)
@@ -281,7 +284,7 @@ public class NewAppointmentPanel extends javax.swing.JPanel
                         .addComponent(timePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1))
-                    .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(ServicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AllergiesText8)
@@ -297,25 +300,10 @@ public class NewAppointmentPanel extends javax.swing.JPanel
                         .addGap(47, 47, 47))
                     .addGroup(ServicePanelLayout.createSequentialGroup()
                         .addComponent(ObsPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1037, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(ServicePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1007, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(ServicePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(ServicePanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 

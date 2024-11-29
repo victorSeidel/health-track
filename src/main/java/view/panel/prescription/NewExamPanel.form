@@ -63,7 +63,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="CancelBtn" min="-2" pref="457" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="UpdateHistoryBtn6" pref="461" max="32767" attributes="0"/>
+                              <Component id="FinishBtn" pref="461" max="32767" attributes="0"/>
                           </Group>
                           <Component id="PersonalInfoText3" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -138,7 +138,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UpdateHistoryBtn6" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="FinishBtn" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="CancelBtn" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="115" max="32767" attributes="0"/>
@@ -270,7 +270,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="UpdateHistoryBtn6">
+        <Component class="javax.swing.JButton" name="FinishBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="0" red="0" type="rgb"/>
@@ -292,6 +292,9 @@
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FinishBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="CancelBtn">
           <Properties>

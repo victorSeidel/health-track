@@ -54,7 +54,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="StatusFld2" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                              <Component id="StatusFld" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                               <Component id="StatusText2" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -65,17 +65,17 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="NameText1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="NameFld1" alignment="0" pref="300" max="32767" attributes="0"/>
+                              <Component id="CodeFld" alignment="0" pref="300" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="SocialNameText1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="SocialNameFld1" alignment="0" pref="300" max="32767" attributes="0"/>
+                              <Component id="PatientCodeFld" alignment="0" pref="300" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="BirthDateText1" alignment="0" pref="300" max="32767" attributes="0"/>
-                              <Component id="BirthDateFld1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="PatientNameFld" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="PersonalInfoText2" alignment="1" max="32767" attributes="0"/>
@@ -92,17 +92,17 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="BloodTypeText1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="BloodTypeFld1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                              <Component id="BloodTypeFld" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="WeightText1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="WeightFld1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                              <Component id="WeightFld" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="HeightText1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="HeightFld1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                              <Component id="HeightFld" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="HealthInfoText1" alignment="0" max="32767" attributes="0"/>
@@ -140,9 +140,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NameFld1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="SocialNameFld1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BirthDateFld1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CodeFld" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PatientCodeFld" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PatientNameFld" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="ServiceHistoryText1" min="-2" max="-2" attributes="0"/>
@@ -160,17 +160,17 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="BloodTypeText1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="BloodTypeFld1" min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="BloodTypeFld" min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="WeightText1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="WeightFld1" min="-2" max="-2" attributes="0"/>
+                          <Component id="WeightFld" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="HeightText1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="HeightFld1" min="-2" max="-2" attributes="0"/>
+                          <Component id="HeightFld" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -209,7 +209,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="StatusText2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="StatusFld2" min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="StatusFld" min="-2" pref="65" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
@@ -248,7 +248,7 @@
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="NameFld1">
+        <Component class="javax.swing.JLabel" name="CodeFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -269,7 +269,7 @@
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="SocialNameFld1">
+        <Component class="javax.swing.JLabel" name="PatientCodeFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -290,7 +290,7 @@
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="BirthDateFld1">
+        <Component class="javax.swing.JLabel" name="PatientNameFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -431,7 +431,7 @@
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="BloodTypeFld1">
+        <Component class="javax.swing.JLabel" name="BloodTypeFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -452,7 +452,7 @@
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="WeightFld1">
+        <Component class="javax.swing.JLabel" name="WeightFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -473,7 +473,7 @@
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="HeightFld1">
+        <Component class="javax.swing.JLabel" name="HeightFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -572,7 +572,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld2">
+            <Component class="javax.swing.JTextPane" name="ObservationsFld">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -596,7 +596,7 @@
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="StatusFld2">
+        <Component class="javax.swing.JLabel" name="StatusFld">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="0"/>
@@ -635,7 +635,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld3">
+            <Component class="javax.swing.JTextPane" name="FamilyHistoryFld">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -665,7 +665,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld4">
+            <Component class="javax.swing.JTextPane" name="SurgeryHistoryFld">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -695,7 +695,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld5">
+            <Component class="javax.swing.JTextPane" name="DiseasesHistoryFld">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -725,7 +725,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld6">
+            <Component class="javax.swing.JTextPane" name="MedicationsFld">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -755,7 +755,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld7">
+            <Component class="javax.swing.JTextPane" name="AllergiesFld">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -785,7 +785,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="ObsFld8">
+            <Component class="javax.swing.JTextPane" name="DiseasesFld">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
